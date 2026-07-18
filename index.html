@@ -224,6 +224,26 @@
   .price-note{margin-top:.9rem; font-size:.8rem; opacity:.75; line-height:1.7;}
   .p-price .btn{margin-top:2rem; text-align:center;}
 
+  /* instructor */
+  .instructor-card{
+    display:flex; gap:40px; align-items:center;
+    background:#fff; border-radius:26px; padding:52px 46px; margin-bottom:56px;
+    box-shadow:0 20px 60px rgba(10,30,60,.12);
+  }
+  .instructor-avatar{
+    flex:0 0 auto; width:120px; height:120px; border-radius:50%;
+    background:linear-gradient(160deg, var(--space-900), var(--ocean-700));
+    color:var(--sakura-200); font-family:var(--serif); font-size:2.4rem;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 30px rgba(10,30,60,.25);
+  }
+  .instructor-body h3{
+    margin-top:.2rem; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    font-size:clamp(1.3rem,2.4vw,1.6rem); color:var(--space-900);
+  }
+  .instructor-en{font-family:var(--sans); font-size:.8rem; letter-spacing:.14em; color:#7a8aa0; font-weight:400;}
+  .instructor-bio{margin-top:1rem; color:#3c4b60; font-size:.92rem; line-height:2;}
+
   /* comparison table */
   .compare{background:var(--mist-050); padding:20px 0 120px; color:var(--ink);}
   table.compare-table{
@@ -300,6 +320,8 @@
     .program-card.reverse .p-body{order:1;}
     .program-card.reverse .p-price{order:2;}
     .audience-grid{grid-template-columns:1fr;}
+    .instructor-card{flex-direction:column; text-align:center; padding:44px 30px;}
+    .instructor-body h3{justify-content:center;}
   }
 </style>
 </head>
@@ -403,6 +425,21 @@
           <li>月3回開催オフ会の優待割引（開催地：東京・京都・新潟）</li>
           <li>メンバー限定オフ会優先参加権</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- INSTRUCTOR -->
+    <div class="instructor-card">
+      <div class="instructor-avatar" aria-hidden="true">朋</div>
+      <div class="instructor-body">
+        <span class="p-tag deep">INSTRUCTOR ― DEEP VOYAGE</span>
+        <h3>佐川 朋子<span class="instructor-en">Tomoko Sagawa</span></h3>
+        <p class="instructor-bio">
+          生まれながらの霊能力を活かし、これまでに多くの願望実現を叶える。<br>
+          10代より日本画家として活動し、全国規模の美術展へ出品多数。<br>
+          2014年には京都御所南にて画廊を開業し、国際的なアートコレクターやアーティストたちと交流を重ねる。<br>
+          現在は元麻布を拠点にし、世界のスピリチュアルスポットを訪問中。
+        </p>
       </div>
     </div>
   </div>
