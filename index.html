@@ -74,11 +74,15 @@
   .petal{position:absolute; width:24px; height:24px; opacity:.85; filter:drop-shadow(0 4px 8px rgba(255,143,184,.35)); animation:bob 7s ease-in-out infinite;}
 
   .ribbon{
-    display:inline-flex; align-items:center; gap:.5em;
-    background:linear-gradient(120deg, var(--gold-500), var(--gold-300));
-    color:var(--teal-900); font-weight:800; font-size:.82rem; letter-spacing:.06em;
-    padding:9px 20px; border-radius:999px; box-shadow:0 8px 20px rgba(255,183,3,.35);
+    display:inline-flex; align-items:center; gap:.45em;
+    background:linear-gradient(120deg, var(--gold-500) 10%, var(--sakura-400) 100%);
+    color:#fff; font-family:var(--serif); font-weight:800; font-size:1rem; letter-spacing:.03em;
+    padding:13px 26px; border-radius:999px; border:2px solid #fff;
+    box-shadow:0 10px 26px rgba(255,143,184,.4);
+    transform:rotate(-2deg); transition:transform .2s;
   }
+  .ribbon:nth-of-type(2){transform:rotate(1.5deg);}
+  .ribbon::before{content:"✨"; font-size:.9em;}
 
   /* ---------- topbar ---------- */
   .topbar{
@@ -389,7 +393,7 @@
     <div class="hero-copy">
       <div class="eyebrow">SATELLITE CAMPUS NIIGATA PRESENTS</div>
       <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
-        <span class="ribbon">いつからでもスタートできます</span>
+        <span class="ribbon">いつからでもスタート可能</span>
         <span class="ribbon">大人気の神講座が3ヶ月になって新登場！</span>
       </div>
       <h1>あなたの潜在意識を変えるだけで<br><em>自由な人生</em>を手にいれる！<br>収入アップへ！</h1>
