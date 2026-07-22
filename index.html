@@ -168,19 +168,25 @@
   .godmother-stage{position:relative;}
   .godmother-panel{
     background:linear-gradient(135deg, var(--teal-700), var(--teal-400));
-    border-radius:28px; padding:52px 46% 52px 6%; min-height:420px;
+    border-radius:28px; padding:52px 42% 52px 6%; min-height:460px;
     display:flex; flex-direction:column; justify-content:center; color:#fff;
     box-shadow:0 24px 50px rgba(4,58,52,.22); position:relative; overflow:hidden;
   }
   .godmother-panel::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 90% 100%, rgba(255,183,3,.35), transparent 55%);}
   .godmother-panel > *{position:relative; z-index:1;}
-  .gm-title{display:inline-block; background:linear-gradient(120deg,var(--gold-500),var(--sakura-400)); color:#fff; font-weight:800; padding:7px 18px; border-radius:999px; font-size:.82rem; letter-spacing:.06em; margin-bottom:16px; width:fit-content;}
-  .godmother-panel h2{font-size:clamp(1.25rem,2.4vw,1.65rem); line-height:1.7;}
-  .godmother-photo-pop{
-    position:absolute; right:1%; bottom:-40px; width:48%; z-index:2;
-    filter:drop-shadow(0 26px 40px rgba(4,58,52,.4));
+  .gm-title{
+    display:inline-block; font-family:var(--serif); font-weight:800;
+    font-size:clamp(1.5rem,3.2vw,2.1rem); letter-spacing:.04em; margin-bottom:18px; width:fit-content;
+    background:linear-gradient(120deg, var(--gold-300), var(--sakura-300) 55%, var(--gold-300));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 0 18px rgba(255,183,3,.55));
   }
-  .godmother-photo-pop img{width:100%; display:block;}
+  .godmother-panel h2{font-size:clamp(1.6rem,3.6vw,2.4rem); line-height:1.55;}
+  .godmother-photo-pop{
+    position:absolute; right:3%; bottom:-20px; z-index:2;
+    filter:drop-shadow(0 20px 34px rgba(4,58,52,.4));
+  }
+  .godmother-photo-pop img{display:block; height:440px; width:auto; max-width:100%;}
 
   /* ---------- results ---------- */
   .results{padding:70px 0; background:var(--aqua-100);}
@@ -320,7 +326,8 @@
     .points-grid{grid-template-columns:repeat(2,1fr);}
     .godmother-panel{padding:44px 6% 200px; text-align:center; min-height:0;}
     .gm-title{margin-left:auto; margin-right:auto;}
-    .godmother-photo-pop{position:relative; right:auto; bottom:auto; width:70%; margin:-160px auto 0;}
+    .godmother-photo-pop{position:relative; right:auto; bottom:auto; margin:-160px auto 0; display:flex; justify-content:center;}
+    .godmother-photo-pop img{height:auto; width:70%; max-width:320px;}
     .results-grid{grid-template-columns:1fr;}
     .results-note-row{flex-direction:column; align-items:center; text-align:center;}
     .results-photo{width:220px;}
