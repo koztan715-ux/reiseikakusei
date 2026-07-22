@@ -73,12 +73,9 @@
   }
   .petal{position:absolute; width:24px; height:24px; opacity:.85; filter:drop-shadow(0 4px 8px rgba(255,143,184,.35)); animation:bob 7s ease-in-out infinite;}
 
-  .ribbon{
-    display:inline-flex; align-items:center; gap:.45em;
-    background:linear-gradient(120deg, var(--teal-800) 10%, var(--teal-500) 100%);
-    color:#fff; font-family:var(--serif); font-weight:800; font-size:1rem; letter-spacing:.03em;
-    padding:13px 26px; border-radius:999px; border:2px solid #fff;
-    box-shadow:0 10px 26px rgba(4,58,52,.3);
+  .hero-callout{
+    font-family:var(--serif); font-weight:800; font-size:clamp(1rem,1.9vw,1.2rem);
+    color:var(--teal-700); letter-spacing:.02em; margin-bottom:14px;
   }
 
   /* ---------- topbar ---------- */
@@ -476,14 +473,12 @@
     </div>
     <div class="hero-copy">
       <div class="eyebrow">SATELLITE CAMPUS NIIGATA PRESENTS</div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
-        <span class="ribbon">いつからでもスタート可能</span>
-        <span class="ribbon">大人気の神講座が3ヶ月になって新登場！</span>
-      </div>
+      <p class="hero-callout">＼大人気の神講座が3ヶ月になって新登場！／</p>
       <h1>あなたの潜在意識を変えるだけで<br><em>自由な人生</em>を手にいれる！<br>収入アップへ！</h1>
       <p class="sub">2つのコースをご用意しました。</p>
       <p class="instructor-credit">講師：佐川 朋子（Tomoko Sagawa）</p>
       <ul class="hero-tags">
+        <li>いつからでもスタート可能</li>
         <li>海外からの参加OK</li>
         <li>オンライン対応</li>
       </ul>
