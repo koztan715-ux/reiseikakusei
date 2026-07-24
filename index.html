@@ -110,14 +110,16 @@
   }
   .hero .wrap{position:relative; z-index:2; text-align:center; max-width:760px;}
   .hero-banner{
-    background:linear-gradient(160deg, var(--teal-800), var(--teal-600));
+    background:linear-gradient(160deg, rgba(4,82,74,.32), rgba(0,154,140,.24));
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.35);
     border-radius:28px; padding:40px 34px; margin-bottom:26px;
-    box-shadow:0 24px 50px rgba(4,58,52,.28);
+    box-shadow:0 24px 50px rgba(4,58,52,.12);
   }
-  .hero-banner .eyebrow{color:var(--gold-300);}
-  .hero-banner .eyebrow::before{background:var(--gold-300);}
-  .hero-banner .hero-callout{color:#fff;}
-  .hero-banner h1{color:#fff;}
+  .hero-banner .eyebrow{color:var(--teal-700);}
+  .hero-banner .eyebrow::before{background:var(--gold-500);}
+  .hero-banner .hero-callout{color:var(--teal-800);}
+  .hero-banner h1{color:var(--teal-900);}
   .hero h1{
     font-size:clamp(2rem,4.6vw,3.1rem); line-height:1.45; color:var(--teal-900);
   }
