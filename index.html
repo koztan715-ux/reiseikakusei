@@ -178,13 +178,22 @@
   }
   .hero-badge span{display:block; font-size:.68rem; color:var(--gold-300); letter-spacing:.06em; margin-bottom:2px;}
   @media (max-width:900px){
-    .hero-wrap{flex-direction:column; text-align:center;}
-    .hero-copy{max-width:100%;}
-    .hero-subquote{text-align:left; margin-left:auto; margin-right:auto; max-width:440px;}
-    .hero-tags, .hero-ctas{justify-content:center;}
-    .hero-photo-col{order:-1; margin-left:0; margin-bottom:8px;}
-    .hero-photo img{height:340px;}
-    .hero-badge{width:74px; height:74px; font-size:.72rem;}
+    .hero-wrap{display:block; position:relative; text-align:left;}
+    .hero-copy{max-width:100%; position:relative; z-index:2;}
+    .hero-subquote{max-width:100%;}
+    .hero-photo-col{
+      position:absolute; z-index:1; top:-8px; right:0; margin:0;
+      width:52%; max-width:260px;
+    }
+    .hero-photo img{
+      height:auto; width:100%; max-width:none;
+      -webkit-mask-image:linear-gradient(to bottom, #000 55%, transparent 92%);
+      mask-image:linear-gradient(to bottom, #000 55%, transparent 92%);
+      filter:
+        drop-shadow(0 0 8px rgba(255,196,64,.7))
+        drop-shadow(0 0 18px rgba(255,176,40,.4));
+    }
+    .hero-badge{top:-4px; right:0; width:70px; height:70px; font-size:.68rem;}
   }
 
   /* ---------- selling points ---------- */
