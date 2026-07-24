@@ -120,6 +120,24 @@
   .hero-banner .eyebrow::before{background:var(--gold-500);}
   .hero-banner .hero-callout{color:var(--teal-800);}
   .hero-banner h1{color:var(--teal-900);}
+  .hero-programs{display:flex; flex-direction:column; gap:22px;}
+  .hero-program-label{
+    font-family:var(--sans); font-weight:800; font-size:clamp(.95rem,1.8vw,1.1rem);
+    color:var(--teal-700); letter-spacing:.04em; margin-bottom:6px;
+  }
+  .hero-program-name{
+    font-family:var(--serif); font-weight:800; font-size:clamp(2rem,5vw,2.9rem); line-height:1.2;
+  }
+  .hero-program-name.tide{
+    background:linear-gradient(120deg, var(--sakura-400), var(--gold-500) 65%, var(--sakura-400));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 6px 18px rgba(255,143,184,.4));
+  }
+  .hero-program-name.deep{
+    background:linear-gradient(120deg, var(--teal-600), var(--gold-500) 65%, var(--teal-600));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 6px 18px rgba(0,154,140,.4));
+  }
   .hero h1{
     font-size:clamp(2rem,4.6vw,3.1rem); line-height:1.45; color:var(--teal-900);
   }
@@ -408,7 +426,16 @@
       <div class="hero-banner">
         <div class="eyebrow">SATELLITE CAMPUS NIIGATA PRESENTS</div>
         <p class="hero-callout">＼大人気の神講座が<br class="sp">3ヶ月になって新登場！／</p>
-        <h1>あなたの潜在意識を変えるだけで<br><em>自由な人生</em>を手にいれる！<br>収入アップへ！</h1>
+        <div class="hero-programs">
+          <div class="hero-program-item">
+            <div class="hero-program-label">セミナーコース</div>
+            <div class="hero-program-name tide">魂海 -KONKAI-</div>
+          </div>
+          <div class="hero-program-item">
+            <div class="hero-program-label">潜在能力覚醒3ヶ月講座</div>
+            <div class="hero-program-name deep">魂核 -KONKAKU-</div>
+          </div>
+        </div>
       </div>
       <p class="instructor-credit">講師：佐川 朋子<br class="sp">（Tomoko Sagawa）</p>
       <ul class="hero-tags">
