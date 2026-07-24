@@ -102,8 +102,8 @@
   /* ---------- hero ---------- */
   .hero{
     background:
-      radial-gradient(circle at 82% 12%, rgba(0,184,167,.28), transparent 48%),
-      linear-gradient(135deg, #04211d 0%, #072e28 45%, #01110f 100%);
+      radial-gradient(circle at 82% 10%, rgba(120,240,210,.35), transparent 50%),
+      linear-gradient(180deg, #032e29 0%, #04524a 32%, #027a6d 62%, #3fceb4 88%, var(--aqua-100) 100%);
     padding:64px 0 70px;
     overflow:hidden;
     position:relative;
@@ -115,6 +115,16 @@
       linear-gradient(90deg, rgba(143,240,225,.08) 1px, transparent 1px);
     background-size:44px 44px;
     mask-image:radial-gradient(circle at 75% 20%, #000 0%, transparent 70%);
+  }
+  .hero-sparkles{position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;}
+  .hero-sparkles .drop{
+    position:absolute; border-radius:50%;
+    background:radial-gradient(circle, #f2fffb 0%, rgba(180,250,230,.9) 45%, rgba(180,250,230,0) 75%);
+    animation:twinkle 3.8s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{opacity:.12; transform:scale(.6);}
+    50%{opacity:1; transform:scale(1.2);}
   }
   .hero-wrap{
     position:relative; z-index:2; display:flex; align-items:flex-start;
@@ -457,6 +467,32 @@
 
 <section class="hero" id="top">
   <div class="hero-grid"></div>
+  <div class="hero-sparkles">
+    <span class="drop" style="top:32.4%; left:16.5%; width:6.3px; height:6.3px; animation-delay:0.28s;"></span>
+    <span class="drop" style="top:52.4%; left:37.1%; width:3.3px; height:3.3px; animation-delay:1.93s;"></span>
+    <span class="drop" style="top:5.5%; left:43.6%; width:3.3px; height:3.3px; animation-delay:0.34s;"></span>
+    <span class="drop" style="top:41.9%; left:81.4%; width:3.6px; height:3.6px; animation-delay:0.85s;"></span>
+    <span class="drop" style="top:61.0%; left:93.0%; width:5.9px; height:5.9px; animation-delay:1.51s;"></span>
+    <span class="drop" style="top:93.8%; left:6.5%; width:7.3px; height:7.3px; animation-delay:1.10s;"></span>
+    <span class="drop" style="top:15.6%; left:13.3%; width:4.5px; height:4.5px; animation-delay:3.10s;"></span>
+    <span class="drop" style="top:19.0%; left:57.8%; width:6.2px; height:6.2px; animation-delay:1.42s;"></span>
+    <span class="drop" style="top:53.5%; left:8.0%; width:3.3px; height:3.3px; animation-delay:0.78s;"></span>
+    <span class="drop" style="top:66.0%; left:43.0%; width:4.6px; height:4.6px; animation-delay:2.23s;"></span>
+    <span class="drop" style="top:44.6%; left:30.8%; width:7.0px; height:7.0px; animation-delay:2.66s;"></span>
+    <span class="drop" style="top:24.9%; left:57.1%; width:5.6px; height:5.6px; animation-delay:3.33s;"></span>
+    <span class="drop" style="top:70.6%; left:29.6%; width:7.9px; height:7.9px; animation-delay:0.45s;"></span>
+    <span class="drop" style="top:41.3%; left:74.7%; width:3.8px; height:3.8px; animation-delay:1.86s;"></span>
+    <span class="drop" style="top:5.7%; left:66.1%; width:6.8px; height:6.8px; animation-delay:2.18s;"></span>
+    <span class="drop" style="top:84.3%; left:32.1%; width:6.5px; height:6.5px; animation-delay:2.26s;"></span>
+    <span class="drop" style="top:56.5%; left:45.8%; width:7.2px; height:7.2px; animation-delay:3.59s;"></span>
+    <span class="drop" style="top:46.6%; left:65.8%; width:3.3px; height:3.3px; animation-delay:2.67s;"></span>
+    <span class="drop" style="top:62.8%; left:97.3%; width:7.1px; height:7.1px; animation-delay:1.08s;"></span>
+    <span class="drop" style="top:38.3%; left:66.2%; width:3.1px; height:3.1px; animation-delay:1.75s;"></span>
+    <span class="drop" style="top:17.8%; left:13.2%; width:3.3px; height:3.3px; animation-delay:2.92s;"></span>
+    <span class="drop" style="top:14.2%; left:25.8%; width:5.0px; height:5.0px; animation-delay:3.31s;"></span>
+    <span class="drop" style="top:9.6%; left:45.1%; width:5.7px; height:5.7px; animation-delay:3.36s;"></span>
+    <span class="drop" style="top:79.0%; left:84.9%; width:4.4px; height:4.4px; animation-delay:1.58s;"></span>
+  </div>
   <div class="wrap hero-wrap">
     <div class="hero-copy">
       <div class="eyebrow">SATELLITE CAMPUS NIIGATA PRESENTS</div>
