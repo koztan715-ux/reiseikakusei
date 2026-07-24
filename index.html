@@ -109,6 +109,15 @@
     overflow:hidden;
   }
   .hero .wrap{position:relative; z-index:2; text-align:center; max-width:760px;}
+  .hero-banner{
+    background:linear-gradient(160deg, var(--teal-800), var(--teal-600));
+    border-radius:28px; padding:40px 34px; margin-bottom:26px;
+    box-shadow:0 24px 50px rgba(4,58,52,.28);
+  }
+  .hero-banner .eyebrow{color:var(--gold-300);}
+  .hero-banner .eyebrow::before{background:var(--gold-300);}
+  .hero-banner .hero-callout{color:#fff;}
+  .hero-banner h1{color:#fff;}
   .hero h1{
     font-size:clamp(2rem,4.6vw,3.1rem); line-height:1.45; color:var(--teal-900);
   }
@@ -382,6 +391,37 @@
   </div>
 </header>
 
+<section class="hero" id="top">
+  <div class="confetti">
+    <svg class="petal" style="top:8%; left:6%; width:20px; height:20px; animation-delay:0s;" viewBox="0 0 64 64"><path fill="#ffb703" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
+    <svg class="petal" style="top:20%; left:88%; width:26px; height:26px; animation-delay:1s;" viewBox="0 0 64 64"><path fill="#ffc0d6" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
+    <svg class="petal" style="top:55%; left:4%; width:18px; height:18px; animation-delay:2s;" viewBox="0 0 64 64"><path fill="#3fd6c4" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
+    <svg class="petal" style="top:70%; left:92%; width:22px; height:22px; animation-delay:1.5s;" viewBox="0 0 64 64"><path fill="#ffd873" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
+    <svg class="petal" style="top:85%; left:14%; width:16px; height:16px; animation-delay:.5s;" viewBox="0 0 64 64"><path fill="#ff8fb8" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
+  </div>
+  <svg class="petal" style="top:14%; left:44%; animation-delay:.8s;" viewBox="0 0 64 64"><path fill="#ffc0d6" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
+
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-banner">
+        <div class="eyebrow">SATELLITE CAMPUS NIIGATA PRESENTS</div>
+        <p class="hero-callout">＼大人気の神講座が<br class="sp">3ヶ月になって新登場！／</p>
+        <h1>あなたの潜在意識を変えるだけで<br><em>自由な人生</em>を手にいれる！<br>収入アップへ！</h1>
+      </div>
+      <p class="instructor-credit">講師：佐川 朋子<br class="sp">（Tomoko Sagawa）</p>
+      <ul class="hero-tags">
+        <li>いつからでもスタート可能</li>
+        <li>海外からの参加OK</li>
+        <li>オンライン対応</li>
+      </ul>
+      <div class="hero-ctas">
+        <a href="#tide" class="btn btn-primary" style="border:2px solid #fff;">① 魂海 -KONKAI- を見る</a>
+        <a href="#deep" class="btn btn-outline" style="background:linear-gradient(120deg, var(--teal-600), var(--teal-400)); color:#fff; border:2px solid #fff;">② 魂核 -KONKAKU- を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="godmother">
   <div class="godmother-glowgrid"></div>
   <div class="wrap godmother-stage">
@@ -405,34 +445,7 @@
 </section>
 
 
-<section class="hero" id="top">
-  <div class="confetti">
-    <svg class="petal" style="top:8%; left:6%; width:20px; height:20px; animation-delay:0s;" viewBox="0 0 64 64"><path fill="#ffb703" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
-    <svg class="petal" style="top:20%; left:88%; width:26px; height:26px; animation-delay:1s;" viewBox="0 0 64 64"><path fill="#ffc0d6" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
-    <svg class="petal" style="top:55%; left:4%; width:18px; height:18px; animation-delay:2s;" viewBox="0 0 64 64"><path fill="#3fd6c4" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
-    <svg class="petal" style="top:70%; left:92%; width:22px; height:22px; animation-delay:1.5s;" viewBox="0 0 64 64"><path fill="#ffd873" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
-    <svg class="petal" style="top:85%; left:14%; width:16px; height:16px; animation-delay:.5s;" viewBox="0 0 64 64"><path fill="#ff8fb8" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
-  </div>
-  <svg class="petal" style="top:14%; left:44%; animation-delay:.8s;" viewBox="0 0 64 64"><path fill="#ffc0d6" d="M32 4c6 8 6 16 0 24-6-8-6-16 0-24Zm0 32c6 8 6 16 0 24-6-8-6-16 0-24ZM4 32c8-6 16-6 24 0-8 6-16 6-24 0Zm32 0c8-6 16-6 24 0-8 6-16 6-24 0Z"/></svg>
 
-  <div class="wrap">
-    <div class="hero-copy">
-      <div class="eyebrow">SATELLITE CAMPUS NIIGATA PRESENTS</div>
-      <p class="hero-callout">＼大人気の神講座が<br class="sp">3ヶ月になって新登場！／</p>
-      <h1>あなたの潜在意識を変えるだけで<br><em>自由な人生</em>を手にいれる！<br>収入アップへ！</h1>
-      <p class="instructor-credit">講師：佐川 朋子<br class="sp">（Tomoko Sagawa）</p>
-      <ul class="hero-tags">
-        <li>いつからでもスタート可能</li>
-        <li>海外からの参加OK</li>
-        <li>オンライン対応</li>
-      </ul>
-      <div class="hero-ctas">
-        <a href="#tide" class="btn btn-primary" style="border:2px solid #fff;">① 魂海 -KONKAI- を見る</a>
-        <a href="#deep" class="btn btn-outline" style="background:linear-gradient(120deg, var(--teal-600), var(--teal-400)); color:#fff; border:2px solid #fff;">② 魂核 -KONKAKU- を見る</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="points">
   <div class="wrap">
