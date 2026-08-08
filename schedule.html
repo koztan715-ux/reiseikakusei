@@ -30,80 +30,126 @@
 
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    font-family:var(--sans); color:var(--ink); background:var(--aqua-050);
+    font-family:var(--sans); color:var(--ink);
+    background:
+      radial-gradient(circle at 1px 1px, rgba(4,82,74,.07) 1px, transparent 0) 0 0/24px 24px,
+      var(--aqua-050);
     line-height:1.8; -webkit-font-smoothing:antialiased;
   }
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:640px; margin:0 auto; padding:0 20px 60px;}
+  .icon{width:1em; height:1em; vertical-align:-.14em; margin-right:.4em; flex-shrink:0;}
 
   header{
-    background:linear-gradient(180deg, #032e29 0%, #04524a 40%, #027a6d 100%);
-    padding:28px 20px 34px; text-align:center; color:#fff;
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg, #032e29 0%, #04524a 45%, #027a6d 100%);
+    padding:32px 20px 46px; text-align:center; color:#fff;
   }
+  header::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 85% 8%, rgba(143,240,225,.35), transparent 55%),
+      radial-gradient(circle at 10% 95%, rgba(255,183,3,.18), transparent 45%);
+  }
+  header::after{
+    content:""; position:absolute; inset:0; opacity:.35;
+    background-image:
+      linear-gradient(rgba(143,240,225,.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143,240,225,.12) 1px, transparent 1px);
+    background-size:34px 34px;
+    mask-image:radial-gradient(circle at 75% 15%, #000 0%, transparent 65%);
+  }
+  .logo, header h1{position:relative;}
   .logo{font-family:var(--serif); font-size:1rem; letter-spacing:.14em; font-weight:800;}
   .logo small{display:block; font-family:var(--sans); font-size:.6rem; letter-spacing:.2em; color:var(--teal-300); font-weight:700; margin-top:4px;}
   header h1{
-    font-family:var(--heading); font-weight:900; font-size:1.3rem;
-    margin-top:14px; letter-spacing:.03em;
+    font-family:var(--heading); font-weight:900; font-size:1.35rem;
+    margin-top:16px; letter-spacing:.03em;
   }
+  .header-wave{display:block; margin-top:-2px; line-height:0;}
+  .header-wave svg{width:100%; height:28px; display:block;}
 
   .section-label{
     font-family:var(--serif); letter-spacing:.2em; font-size:.72rem;
     color:var(--teal-600); text-transform:uppercase; font-weight:700;
-    margin:32px 0 12px; display:flex; align-items:center; gap:.6em;
+    margin:34px 0 14px; display:flex; align-items:center; gap:.6em;
   }
   .section-label::before{content:""; width:22px; height:3px; border-radius:2px; background:var(--gold-500);}
 
   .next-card{
-    margin-top:-18px; background:#fff; border-radius:20px;
-    box-shadow:0 16px 40px rgba(4,58,52,.18);
+    background:#fff; border-radius:20px;
+    box-shadow:0 16px 40px rgba(4,58,52,.16);
     padding:26px 22px; position:relative; overflow:hidden;
+    border:1px solid rgba(4,82,74,.06);
   }
   .next-card::before{
     content:"NEXT"; position:absolute; top:14px; right:-32px;
     background:var(--gold-500); color:#fff; font-family:var(--heading); font-weight:900;
     font-size:.7rem; letter-spacing:.1em; padding:5px 40px; transform:rotate(38deg);
+    box-shadow:0 4px 10px rgba(4,58,52,.2);
+  }
+  .next-card::after{
+    content:""; position:absolute; left:-30px; bottom:-30px; width:110px; height:110px;
+    border-radius:50%; background:radial-gradient(circle, var(--sakura-300), transparent 70%);
+    opacity:.5; pointer-events:none;
   }
   .next-date{font-family:var(--serif); font-weight:800; font-size:1.9rem; color:var(--teal-800); line-height:1.2;}
   .next-date .yw{font-size:1rem; font-weight:700; color:var(--teal-600); display:block; margin-bottom:2px;}
   .next-time{
-    display:inline-block; margin-top:10px; padding:6px 16px; border-radius:999px;
+    display:inline-flex; align-items:center; margin-top:12px; padding:6px 16px; border-radius:999px;
     background:var(--aqua-100); color:var(--teal-700); font-weight:800; font-size:.92rem;
   }
   .next-title{
     font-family:var(--heading); font-weight:900; font-size:1.15rem; color:var(--teal-900);
-    margin-top:16px;
+    margin-top:16px; position:relative;
   }
-  .next-desc{margin-top:10px; font-size:.92rem; color:var(--ink); opacity:.85;}
+  .next-desc{display:flex; align-items:center; margin-top:10px; font-size:.92rem; color:var(--ink); opacity:.85; position:relative;}
 
   .empty-note{
-    margin-top:-18px; background:#fff; border-radius:20px;
+    background:#fff; border-radius:20px;
     box-shadow:0 16px 40px rgba(4,58,52,.12); padding:26px 22px;
     font-size:.92rem; color:var(--teal-700); text-align:center;
   }
 
-  .upcoming-list{display:flex; flex-direction:column; gap:10px;}
+  .upcoming-list{position:relative; display:flex; flex-direction:column; gap:16px; padding-left:26px;}
+  .upcoming-list::before{
+    content:""; position:absolute; left:7px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(180deg, var(--teal-400), var(--sakura-300) 85%, transparent);
+    border-radius:2px;
+  }
   .upcoming-item{
-    display:flex; gap:14px; align-items:flex-start; background:#fff;
-    border-radius:14px; padding:14px 16px; box-shadow:0 6px 18px rgba(4,58,52,.08);
+    position:relative; display:flex; gap:14px; align-items:center; background:#fff;
+    border-radius:14px; padding:13px 16px; box-shadow:0 6px 18px rgba(4,58,52,.08);
+    border:1px solid rgba(4,82,74,.05);
+  }
+  .upcoming-item::before{
+    content:""; position:absolute; left:-25px; top:50%; transform:translateY(-50%);
+    width:11px; height:11px; border-radius:50%; background:var(--teal-500);
+    box-shadow:0 0 0 4px var(--aqua-050);
   }
   .upcoming-item .d{
-    font-family:var(--serif); font-weight:800; color:var(--teal-700);
-    font-size:.95rem; white-space:nowrap; min-width:64px;
+    font-family:var(--serif); font-weight:800; color:var(--teal-800);
+    font-size:.92rem; text-align:center; line-height:1.2;
+    background:var(--aqua-100); border-radius:10px; padding:8px 10px; min-width:50px;
   }
-  .upcoming-item .d span{display:block; font-size:.68rem; color:var(--teal-500); font-weight:700;}
-  .upcoming-item .body{flex:1;}
+  .upcoming-item .d span{display:block; font-size:.6rem; color:var(--teal-500); font-weight:700; margin-top:2px;}
+  .upcoming-item .body{flex:1; min-width:0;}
   .upcoming-item .t{font-weight:800; font-size:.9rem; color:var(--teal-900);}
-  .upcoming-item .time{font-size:.78rem; color:var(--teal-600); font-weight:700; margin-top:2px;}
+  .upcoming-item .time{display:flex; align-items:center; font-size:.78rem; color:var(--teal-600); font-weight:700; margin-top:4px;}
 
   .cta{
-    display:block; text-align:center; margin-top:30px; padding:16px;
+    display:flex; align-items:center; justify-content:center; text-align:center; margin-top:34px; padding:16px;
     border-radius:999px; background:linear-gradient(120deg, var(--gold-500), var(--sakura-400));
     color:#fff; font-weight:800; font-size:.95rem; letter-spacing:.03em;
     box-shadow:0 10px 28px rgba(255,143,184,.4);
   }
+  .cta .icon{margin-right:.5em; margin-left:0;}
 
-  footer{margin-top:40px; text-align:center; font-size:.76rem; color:var(--teal-700); opacity:.8;}
+  footer{
+    margin-top:44px; padding-top:18px; text-align:center;
+    font-size:.76rem; color:var(--teal-700); opacity:.75;
+    border-top:1px solid rgba(4,82,74,.12);
+  }
 </style>
 </head>
 <body>
@@ -112,6 +158,9 @@
   <div class="logo">櫻桃ビジネススクール<small>SATELLITE CAMPUS NIIGATA</small></div>
   <h1>セミナースケジュール</h1>
 </header>
+<div class="header-wave" aria-hidden="true">
+  <svg viewBox="0 0 500 40" preserveAspectRatio="none"><path d="M0,22 C120,44 200,0 320,10 C400,17 460,30 500,18 L500,40 L0,40 Z" fill="#f6fffd"/></svg>
+</div>
 
 <div class="wrap">
   <p class="section-label">次回のセミナー</p>
@@ -120,7 +169,10 @@
   <p class="section-label">今後の予定</p>
   <div id="upcoming-list" class="upcoming-list"></div>
 
-  <a class="cta" href="https://lin.ee/St2QIVZ" target="_blank" rel="noopener">公式LINEで相談・お申し込み</a>
+  <a class="cta" href="https://lin.ee/St2QIVZ" target="_blank" rel="noopener">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-11.78 7.84L4 21l1.66-5.22A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+    公式LINEで相談・お申し込み
+  </a>
 </div>
 
 <footer>&copy; 櫻桃ビジネススクール サテライトキャンパス新潟校</footer>
@@ -132,18 +184,20 @@
    * date: "YYYY-MM-DD", time: "開始-終了" の文字列, title: セミナー名, desc: 内容説明
    */
   const seminars = [
-    { date: "2026-08-11", time: "18:00-19:20", title: "第4回　「言葉を変えると経済的階層が変わる①」", desc: "講師：佐川朋子" },
-    { date: "2026-08-13", time: "20:00-21:20", title: "第5回　「言葉を変えると経済的階層が変わる②」", desc: "講師：佐川朋子" },
-    { date: "2026-08-15", time: "10:00-11:20", title: "第6回　「自己肯定感と潜在意識②」", desc: "講師：佐川朋子" },
-    { date: "2026-08-18", time: "18:00-19:20", title: "第7回　「成功する人の思考パターン①」", desc: "講師：佐川朋子" },
-    { date: "2026-08-20", time: "20:00-21:20", title: "第8回　「成功する人の思考パターン②」", desc: "講師：佐川朋子" },
-    { date: "2026-08-22", time: "10:00-11:20", title: "第9回　「あなたのなかにいる『不幸になりたい自分』を壊す」", desc: "講師：佐川朋子" },
-    { date: "2026-08-25", time: "18:00-19:20", title: "第10回　「最高のパフォーマンスを出す潜在意識の使い方①」", desc: "講師：佐川朋子" },
-    { date: "2026-08-27", time: "20:00-21:20", title: "第11回　「最高のパフォーマンスを出す潜在意識の使い方②」", desc: "講師：佐川朋子" },
-    { date: "2026-08-29", time: "10:00-11:20", title: "第12回　「過去のトラウマでビジネスを成功させる」", desc: "講師：佐川朋子" }
+    { date: "2026-08-11", time: "18:00-19:20", title: "「言葉を変えると経済的階層が変わる①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-13", time: "20:00-21:20", title: "「言葉を変えると経済的階層が変わる②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-15", time: "10:00-11:20", title: "「自己肯定感と潜在意識②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-18", time: "18:00-19:20", title: "「成功する人の思考パターン①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-20", time: "20:00-21:20", title: "「成功する人の思考パターン②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-22", time: "10:00-11:20", title: "「あなたのなかにいる『不幸になりたい自分』を壊す」", desc: "講師：佐川朋子" },
+    { date: "2026-08-25", time: "18:00-19:20", title: "「最高のパフォーマンスを出す潜在意識の使い方①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-27", time: "20:00-21:20", title: "「最高のパフォーマンスを出す潜在意識の使い方②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-29", time: "10:00-11:20", title: "「過去のトラウマでビジネスを成功させる」", desc: "講師：佐川朋子" }
   ];
 
   const weekdays = ["日","月","火","水","木","金","土"];
+  const ICO_CLOCK = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>';
+  const ICO_USER = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>';
 
   function parseStart(s) {
     const startTime = (s.time || "").split("-")[0].trim();
@@ -171,9 +225,9 @@
     nextSlot.innerHTML = `
       <div class="next-card">
         <div class="next-date"><span class="yw">${wd}</span>${md}</div>
-        <div class="next-time">${next.time}</div>
+        <div class="next-time">${ICO_CLOCK}${next.time}</div>
         <div class="next-title">${next.title}</div>
-        ${next.desc ? `<div class="next-desc">${next.desc}</div>` : ""}
+        ${next.desc ? `<div class="next-desc">${ICO_USER}${next.desc}</div>` : ""}
       </div>`;
 
     const rest = upcoming.slice(1);
@@ -184,7 +238,7 @@
             <div class="d">${f.md}<span>${f.wd}</span></div>
             <div class="body">
               <div class="t">${s.title}</div>
-              <div class="time">${s.time}</div>
+              <div class="time">${ICO_CLOCK}${s.time}</div>
             </div>
           </div>`;
         }).join("")
