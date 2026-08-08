@@ -43,7 +43,7 @@
   header{
     position:relative; overflow:hidden;
     background:linear-gradient(180deg, #0a4f47 0%, #159c8c 50%, #3fd0bb 100%);
-    padding:44px 20px 46px; text-align:center; color:#fff;
+    padding:44px 20px 84px; text-align:center; color:#fff;
   }
   header::before{
     content:""; position:absolute; inset:0; z-index:0;
@@ -79,15 +79,15 @@
     text-shadow:0 2px 4px rgba(2,30,26,.4), 0 2px 18px rgba(255,233,184,.4);
   }
   header h1 .page-sub{
-    display:block; font-family:var(--heading); font-weight:700; font-size:.92rem;
+    display:block; font-family:var(--heading); font-weight:700; font-size:1.4rem;
     color:var(--teal-300); margin-top:10px;
     text-align:justify; text-align-last:justify; text-justify:inter-character;
   }
-  .ocean-waves{position:relative; z-index:2; height:56px; overflow:hidden; margin-top:-2px;}
+  .ocean-waves{position:absolute; left:0; right:0; bottom:0; z-index:1; height:64px; overflow:hidden; pointer-events:none;}
   .ocean-waves .wave{position:absolute; top:0; left:0; width:200%; height:100%; display:block;}
-  .ocean-waves .wave-a{fill:rgba(184,242,226,.32); animation:wave-drift 18s linear infinite;}
-  .ocean-waves .wave-b{fill:rgba(21,156,140,.45); animation:wave-drift 12s linear infinite reverse;}
-  .ocean-waves .wave-c{fill:#faf4e0; animation:wave-drift 8.5s linear infinite;}
+  .ocean-waves .wave-a{fill:rgba(184,242,226,.35); animation:wave-drift 18s linear infinite;}
+  .ocean-waves .wave-b{fill:rgba(10,79,71,.4); animation:wave-drift 12s linear infinite reverse;}
+  .ocean-waves .wave-c{fill:rgba(255,255,255,.22); animation:wave-drift 8.5s linear infinite;}
   @keyframes wave-drift{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
@@ -184,12 +184,12 @@
 <header>
   <div class="corner-logo">櫻桃ビジネススクール<span>SATELLITE CAMPUS NIIGATA</span></div>
   <h1><span class="konkai">魂海ーKONKAIー</span><span class="page-sub">セミナースケジュール</span></h1>
+  <div class="ocean-waves" aria-hidden="true">
+    <svg class="wave wave-a" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,50 C150,20 450,80 600,50 C750,20 1050,80 1200,50 C1350,20 1650,80 1800,50 C1950,20 2250,80 2400,50 L2400,130 L0,130 Z"/></svg>
+    <svg class="wave wave-b" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,72 C150,110 450,32 600,72 C750,110 1050,32 1200,72 C1350,110 1650,32 1800,72 C1950,110 2250,32 2400,72 L2400,130 L0,130 Z"/></svg>
+    <svg class="wave wave-c" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,96 C150,64 450,120 600,96 C750,64 1050,120 1200,96 C1350,64 1650,120 1800,96 C1950,64 2250,120 2400,96 L2400,130 L0,130 Z"/></svg>
+  </div>
 </header>
-<div class="ocean-waves" aria-hidden="true">
-  <svg class="wave wave-a" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,50 C150,20 450,80 600,50 C750,20 1050,80 1200,50 C1350,20 1650,80 1800,50 C1950,20 2250,80 2400,50 L2400,130 L0,130 Z"/></svg>
-  <svg class="wave wave-b" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,72 C150,110 450,32 600,72 C750,110 1050,32 1200,72 C1350,110 1650,32 1800,72 C1950,110 2250,32 2400,72 L2400,130 L0,130 Z"/></svg>
-  <svg class="wave wave-c" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,96 C150,64 450,120 600,96 C750,64 1050,120 1200,96 C1350,64 1650,120 1800,96 C1950,64 2250,120 2400,96 L2400,130 L0,130 Z"/></svg>
-</div>
 
 <div class="wrap">
   <p class="section-label">次回のセミナー</p>
