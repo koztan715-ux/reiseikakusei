@@ -9,20 +9,20 @@
   @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700;800&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap');
 
   :root{
-    --teal-900:#023b36;
-    --teal-800:#04524a;
-    --teal-700:#03685f;
-    --teal-600:#009a8c;
-    --teal-500:#00b8a7;
-    --teal-400:#3fd6c4;
-    --teal-300:#8ff0e1;
-    --aqua-100:#e3fbf6;
-    --aqua-050:#f6fffd;
-    --gold-500:#ffb703;
-    --gold-300:#ffd873;
-    --sakura-300:#ffc0d6;
-    --sakura-400:#ff8fb8;
-    --ink:#043a34;
+    --teal-900:#0b4a43;
+    --teal-800:#0e6e63;
+    --teal-700:#159c8c;
+    --teal-600:#22b6a1;
+    --teal-500:#3fd0bb;
+    --teal-400:#7fe6d2;
+    --teal-300:#b8f2e2;
+    --aqua-100:#eef3e0;
+    --aqua-050:#faf4e0;
+    --gold-500:#f2a93c;
+    --gold-300:#ffe9b8;
+    --sakura-300:#f4e2b8;
+    --sakura-400:#e2b463;
+    --ink:#0d332e;
     --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
     --sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
     --heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
@@ -42,14 +42,16 @@
 
   header{
     position:relative; overflow:hidden;
-    background:linear-gradient(180deg, #032e29 0%, #04524a 45%, #027a6d 100%);
+    background:linear-gradient(180deg, #0a4f47 0%, #159c8c 50%, #3fd0bb 100%);
     padding:44px 20px 46px; text-align:center; color:#fff;
   }
   header::before{
     content:""; position:absolute; inset:0; z-index:0;
     background:
-      radial-gradient(circle at 85% 8%, rgba(143,240,225,.35), transparent 55%),
-      radial-gradient(circle at 10% 95%, rgba(0,184,167,.25), transparent 45%);
+      radial-gradient(circle at 50% -15%, rgba(255,255,255,.5), transparent 55%),
+      radial-gradient(circle at 82% 10%, rgba(255,255,255,.22), transparent 50%),
+      radial-gradient(circle at 12% 92%, rgba(255,233,184,.2), transparent 45%),
+      radial-gradient(ellipse 70% 55% at 50% 42%, rgba(4,42,38,.28), transparent 70%);
   }
   header::after{
     content:""; position:absolute; inset:-20% -10%; z-index:0; opacity:.55; pointer-events:none;
@@ -69,21 +71,23 @@
     font-family:var(--serif); font-size:.62rem; letter-spacing:.08em; font-weight:700;
     color:rgba(255,255,255,.55); line-height:1.5;
   }
-  .corner-logo span{display:block; font-size:.52rem; letter-spacing:.1em; color:rgba(143,240,225,.45); font-weight:700;}
+  .corner-logo span{display:block; font-size:.52rem; letter-spacing:.1em; color:rgba(184,242,226,.55); font-weight:700;}
+  header h1{display:inline-grid; justify-items:stretch;}
   header h1 .konkai{
     display:block; font-family:var(--serif); font-weight:800; letter-spacing:.06em;
-    font-size:clamp(2.1rem, 10vw, 2.7rem); color:#fff;
-    text-shadow:0 2px 18px rgba(255,183,3,.35);
+    font-size:clamp(2.1rem, 10vw, 2.7rem); color:#fff; white-space:nowrap;
+    text-shadow:0 2px 4px rgba(2,30,26,.4), 0 2px 18px rgba(255,233,184,.4);
   }
   header h1 .page-sub{
     display:block; font-family:var(--heading); font-weight:700; font-size:.92rem;
-    letter-spacing:.16em; color:var(--teal-300); margin-top:10px;
+    color:var(--teal-300); margin-top:10px;
+    text-align:justify; text-align-last:justify; text-justify:inter-character;
   }
   .ocean-waves{position:relative; z-index:2; height:56px; overflow:hidden; margin-top:-2px;}
   .ocean-waves .wave{position:absolute; top:0; left:0; width:200%; height:100%; display:block;}
-  .ocean-waves .wave-a{fill:rgba(143,240,225,.32); animation:wave-drift 18s linear infinite;}
-  .ocean-waves .wave-b{fill:rgba(0,154,140,.45); animation:wave-drift 12s linear infinite reverse;}
-  .ocean-waves .wave-c{fill:#f6fffd; animation:wave-drift 8.5s linear infinite;}
+  .ocean-waves .wave-a{fill:rgba(184,242,226,.32); animation:wave-drift 18s linear infinite;}
+  .ocean-waves .wave-b{fill:rgba(21,156,140,.45); animation:wave-drift 12s linear infinite reverse;}
+  .ocean-waves .wave-c{fill:#faf4e0; animation:wave-drift 8.5s linear infinite;}
   @keyframes wave-drift{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
@@ -164,7 +168,7 @@
     display:flex; align-items:center; justify-content:center; text-align:center; margin-top:34px; padding:16px;
     border-radius:999px; background:linear-gradient(120deg, var(--gold-500), var(--sakura-400));
     color:#fff; font-weight:800; font-size:.95rem; letter-spacing:.03em;
-    box-shadow:0 10px 28px rgba(255,143,184,.4);
+    box-shadow:0 10px 28px rgba(226,180,99,.45);
   }
   .cta .icon{margin-right:.5em; margin-left:0;}
 
