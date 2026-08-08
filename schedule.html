@@ -132,10 +132,15 @@
    * date: "YYYY-MM-DD", time: "開始-終了" の文字列, title: セミナー名, desc: 内容説明
    */
   const seminars = [
-    { date: "2026-08-11", time: "20:00-20:40", title: "魂海 -KONKAI- 第1回", desc: "潜在能力覚醒の基礎講座。初めての方も参加しやすい導入回です。" },
-    { date: "2026-08-13", time: "20:00-20:40", title: "魂海 -KONKAI- 第2回", desc: "" },
-    { date: "2026-08-15", time: "10:00-10:40", title: "魂海 -KONKAI- 第3回", desc: "" },
-    { date: "2026-08-18", time: "20:00-20:40", title: "魂海 -KONKAI- 第4回", desc: "" }
+    { date: "2026-08-11", time: "18:00-19:20", title: "「言葉を変えると経済的階層が変わる①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-13", time: "20:00-21:20", title: "「言葉を変えると経済的階層が変わる②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-15", time: "10:00-11:20", title: "「自己肯定感と潜在意識②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-18", time: "18:00-19:20", title: "「成功する人の思考パターン①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-20", time: "20:00-21:20", title: "「成功する人の思考パターン②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-22", time: "10:00-11:20", title: "「あなたのなかにいる『不幸になりたい自分』を壊す」", desc: "講師：佐川朋子" },
+    { date: "2026-08-25", time: "18:00-19:20", title: "「最高のパフォーマンスを出す潜在意識の使い方①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-27", time: "20:00-21:20", title: "「最高のパフォーマンスを出す潜在意識の使い方②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-29", time: "10:00-11:20", title: "「過去のトラウマでビジネスを成功させる」", desc: "講師：佐川朋子" }
   ];
 
   const weekdays = ["日","月","火","水","木","金","土"];
@@ -171,7 +176,7 @@
         ${next.desc ? `<div class="next-desc">${next.desc}</div>` : ""}
       </div>`;
 
-    const rest = upcoming.slice(1, 7);
+    const rest = upcoming.slice(1);
     listEl.innerHTML = rest.length
       ? rest.map(s => {
           const f = fmtDate(s.date);
