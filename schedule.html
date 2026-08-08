@@ -46,18 +46,22 @@
     padding:44px 20px 46px; text-align:center; color:#fff;
   }
   header::before{
-    content:""; position:absolute; inset:0;
+    content:""; position:absolute; inset:0; z-index:0;
     background:
       radial-gradient(circle at 85% 8%, rgba(143,240,225,.35), transparent 55%),
-      radial-gradient(circle at 10% 95%, rgba(255,183,3,.18), transparent 45%);
+      radial-gradient(circle at 10% 95%, rgba(0,184,167,.25), transparent 45%);
   }
   header::after{
-    content:""; position:absolute; inset:0; opacity:.35;
-    background-image:
-      linear-gradient(rgba(143,240,225,.12) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(143,240,225,.12) 1px, transparent 1px);
-    background-size:34px 34px;
-    mask-image:radial-gradient(circle at 75% 15%, #000 0%, transparent 65%);
+    content:""; position:absolute; inset:-20% -10%; z-index:0; opacity:.55; pointer-events:none;
+    background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.12) 50%, transparent 58%);
+    animation:shimmer-move 9s ease-in-out infinite;
+  }
+  @keyframes shimmer-move{
+    0%,100%{transform:translateX(-8%);}
+    50%{transform:translateX(8%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    header::after{animation:none;}
   }
   header h1{position:relative; z-index:2;}
   .corner-logo{
@@ -75,24 +79,17 @@
     display:block; font-family:var(--heading); font-weight:700; font-size:.92rem;
     letter-spacing:.16em; color:var(--teal-300); margin-top:10px;
   }
-  .header-wave{display:block; margin-top:-2px; line-height:0; position:relative; z-index:2;}
-  .header-wave svg{width:100%; height:28px; display:block;}
-
-  .bubbles{position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1;}
-  .bubbles i{
-    position:absolute; top:-12%; border-radius:50%; display:block;
-    background:radial-gradient(circle at 32% 28%, rgba(255,244,214,.85), rgba(255,183,3,.4) 55%, rgba(255,183,3,0) 78%);
-    box-shadow:0 0 6px rgba(255,183,3,.25);
-    opacity:0; animation:bubble-fall linear infinite;
-  }
-  @keyframes bubble-fall{
-    0%{top:-12%; opacity:0;}
-    12%{opacity:.55;}
-    85%{opacity:.5;}
-    100%{top:112%; opacity:0;}
+  .ocean-waves{position:relative; z-index:2; height:56px; overflow:hidden; margin-top:-2px;}
+  .ocean-waves .wave{position:absolute; top:0; left:0; width:200%; height:100%; display:block;}
+  .ocean-waves .wave-a{fill:rgba(143,240,225,.32); animation:wave-drift 18s linear infinite;}
+  .ocean-waves .wave-b{fill:rgba(0,154,140,.45); animation:wave-drift 12s linear infinite reverse;}
+  .ocean-waves .wave-c{fill:#f6fffd; animation:wave-drift 8.5s linear infinite;}
+  @keyframes wave-drift{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
   }
   @media (prefers-reduced-motion: reduce){
-    .bubbles i{animation:none; display:none;}
+    .ocean-waves .wave{animation:none;}
   }
 
   .section-label{
@@ -181,21 +178,13 @@
 <body>
 
 <header>
-  <div class="bubbles" aria-hidden="true">
-    <i style="left:8%; width:9px; height:9px; animation-duration:7.5s; animation-delay:-1.2s;"></i>
-    <i style="left:20%; width:5px; height:5px; animation-duration:6.2s; animation-delay:-4.6s;"></i>
-    <i style="left:33%; width:12px; height:12px; animation-duration:9s; animation-delay:-2.8s;"></i>
-    <i style="left:47%; width:6px; height:6px; animation-duration:6.8s; animation-delay:-6.1s;"></i>
-    <i style="left:60%; width:10px; height:10px; animation-duration:8.2s; animation-delay:-.4s;"></i>
-    <i style="left:72%; width:5px; height:5px; animation-duration:5.8s; animation-delay:-3.5s;"></i>
-    <i style="left:84%; width:8px; height:8px; animation-duration:7.9s; animation-delay:-5.3s;"></i>
-    <i style="left:93%; width:6px; height:6px; animation-duration:6.5s; animation-delay:-2.1s;"></i>
-  </div>
   <div class="corner-logo">櫻桃ビジネススクール<span>SATELLITE CAMPUS NIIGATA</span></div>
   <h1><span class="konkai">魂海ーKONKAIー</span><span class="page-sub">セミナースケジュール</span></h1>
 </header>
-<div class="header-wave" aria-hidden="true">
-  <svg viewBox="0 0 500 40" preserveAspectRatio="none"><path d="M0,22 C120,44 200,0 320,10 C400,17 460,30 500,18 L500,40 L0,40 Z" fill="#f6fffd"/></svg>
+<div class="ocean-waves" aria-hidden="true">
+  <svg class="wave wave-a" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,50 C150,20 450,80 600,50 C750,20 1050,80 1200,50 C1350,20 1650,80 1800,50 C1950,20 2250,80 2400,50 L2400,130 L0,130 Z"/></svg>
+  <svg class="wave wave-b" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,72 C150,110 450,32 600,72 C750,110 1050,32 1200,72 C1350,110 1650,32 1800,72 C1950,110 2250,32 2400,72 L2400,130 L0,130 Z"/></svg>
+  <svg class="wave wave-c" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,96 C150,64 450,120 600,96 C750,64 1050,120 1200,96 C1350,64 1650,120 1800,96 C1950,64 2250,120 2400,96 L2400,130 L0,130 Z"/></svg>
 </div>
 
 <div class="wrap">
