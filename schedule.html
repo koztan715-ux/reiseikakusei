@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>セミナースケジュール｜櫻桃ビジネススクール サテライトキャンパス新潟校</title>
+<meta name="description" content="次回セミナーの日時・内容と、今後の開催予定をご案内します。">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700;800&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap');
+
+  :root{
+    --teal-900:#023b36;
+    --teal-800:#04524a;
+    --teal-700:#03685f;
+    --teal-600:#009a8c;
+    --teal-500:#00b8a7;
+    --teal-400:#3fd6c4;
+    --teal-300:#8ff0e1;
+    --aqua-100:#e3fbf6;
+    --aqua-050:#f6fffd;
+    --gold-500:#ffb703;
+    --gold-300:#ffd873;
+    --sakura-300:#ffc0d6;
+    --sakura-400:#ff8fb8;
+    --ink:#043a34;
+    --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    --heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:var(--sans); color:var(--ink); background:var(--aqua-050);
+    line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 20px 60px;}
+
+  header{
+    background:linear-gradient(180deg, #032e29 0%, #04524a 40%, #027a6d 100%);
+    padding:28px 20px 34px; text-align:center; color:#fff;
+  }
+  .logo{font-family:var(--serif); font-size:1rem; letter-spacing:.14em; font-weight:800;}
+  .logo small{display:block; font-family:var(--sans); font-size:.6rem; letter-spacing:.2em; color:var(--teal-300); font-weight:700; margin-top:4px;}
+  header h1{
+    font-family:var(--heading); font-weight:900; font-size:1.3rem;
+    margin-top:14px; letter-spacing:.03em;
+  }
+
+  .section-label{
+    font-family:var(--serif); letter-spacing:.2em; font-size:.72rem;
+    color:var(--teal-600); text-transform:uppercase; font-weight:700;
+    margin:32px 0 12px; display:flex; align-items:center; gap:.6em;
+  }
+  .section-label::before{content:""; width:22px; height:3px; border-radius:2px; background:var(--gold-500);}
+
+  .next-card{
+    margin-top:-18px; background:#fff; border-radius:20px;
+    box-shadow:0 16px 40px rgba(4,58,52,.18);
+    padding:26px 22px; position:relative; overflow:hidden;
+  }
+  .next-card::before{
+    content:"NEXT"; position:absolute; top:14px; right:-32px;
+    background:var(--gold-500); color:#fff; font-family:var(--heading); font-weight:900;
+    font-size:.7rem; letter-spacing:.1em; padding:5px 40px; transform:rotate(38deg);
+  }
+  .next-date{font-family:var(--serif); font-weight:800; font-size:1.9rem; color:var(--teal-800); line-height:1.2;}
+  .next-date .yw{font-size:1rem; font-weight:700; color:var(--teal-600); display:block; margin-bottom:2px;}
+  .next-time{
+    display:inline-block; margin-top:10px; padding:6px 16px; border-radius:999px;
+    background:var(--aqua-100); color:var(--teal-700); font-weight:800; font-size:.92rem;
+  }
+  .next-title{
+    font-family:var(--heading); font-weight:900; font-size:1.15rem; color:var(--teal-900);
+    margin-top:16px;
+  }
+  .next-desc{margin-top:10px; font-size:.92rem; color:var(--ink); opacity:.85;}
+
+  .empty-note{
+    margin-top:-18px; background:#fff; border-radius:20px;
+    box-shadow:0 16px 40px rgba(4,58,52,.12); padding:26px 22px;
+    font-size:.92rem; color:var(--teal-700); text-align:center;
+  }
+
+  .upcoming-list{display:flex; flex-direction:column; gap:10px;}
+  .upcoming-item{
+    display:flex; gap:14px; align-items:flex-start; background:#fff;
+    border-radius:14px; padding:14px 16px; box-shadow:0 6px 18px rgba(4,58,52,.08);
+  }
+  .upcoming-item .d{
+    font-family:var(--serif); font-weight:800; color:var(--teal-700);
+    font-size:.95rem; white-space:nowrap; min-width:64px;
+  }
+  .upcoming-item .d span{display:block; font-size:.68rem; color:var(--teal-500); font-weight:700;}
+  .upcoming-item .body{flex:1;}
+  .upcoming-item .t{font-weight:800; font-size:.9rem; color:var(--teal-900);}
+  .upcoming-item .time{font-size:.78rem; color:var(--teal-600); font-weight:700; margin-top:2px;}
+
+  .cta{
+    display:block; text-align:center; margin-top:30px; padding:16px;
+    border-radius:999px; background:linear-gradient(120deg, var(--gold-500), var(--sakura-400));
+    color:#fff; font-weight:800; font-size:.95rem; letter-spacing:.03em;
+    box-shadow:0 10px 28px rgba(255,143,184,.4);
+  }
+
+  footer{margin-top:40px; text-align:center; font-size:.76rem; color:var(--teal-700); opacity:.8;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">櫻桃ビジネススクール<small>SATELLITE CAMPUS NIIGATA</small></div>
+  <h1>セミナースケジュール</h1>
+</header>
+
+<div class="wrap">
+  <p class="section-label">次回のセミナー</p>
+  <div id="next-slot"></div>
+
+  <p class="section-label">今後の予定</p>
+  <div id="upcoming-list" class="upcoming-list"></div>
+
+  <a class="cta" href="https://lin.ee/St2QIVZ" target="_blank" rel="noopener">公式LINEで相談・お申し込み</a>
+</div>
+
+<footer>&copy; 櫻桃ビジネススクール サテライトキャンパス新潟校</footer>
+
+<script>
+  /*
+   * ここにセミナー予定を追加してください。
+   * 過去の日時は自動的に一覧から消えます（削除不要）。
+   * date: "YYYY-MM-DD", time: "開始-終了" の文字列, title: セミナー名, desc: 内容説明
+   */
+  const seminars = [
+    { date: "2026-08-11", time: "18:00-19:20", title: "第4回　「言葉を変えると経済的階層が変わる①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-13", time: "20:00-21:20", title: "第5回　「言葉を変えると経済的階層が変わる②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-15", time: "10:00-11:20", title: "第6回　「自己肯定感と潜在意識②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-18", time: "18:00-19:20", title: "第7回　「成功する人の思考パターン①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-20", time: "20:00-21:20", title: "第8回　「成功する人の思考パターン②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-22", time: "10:00-11:20", title: "第9回　「あなたのなかにいる『不幸になりたい自分』を壊す」", desc: "講師：佐川朋子" },
+    { date: "2026-08-25", time: "18:00-19:20", title: "第10回　「最高のパフォーマンスを出す潜在意識の使い方①」", desc: "講師：佐川朋子" },
+    { date: "2026-08-27", time: "20:00-21:20", title: "第11回　「最高のパフォーマンスを出す潜在意識の使い方②」", desc: "講師：佐川朋子" },
+    { date: "2026-08-29", time: "10:00-11:20", title: "第12回　「過去のトラウマでビジネスを成功させる」", desc: "講師：佐川朋子" }
+  ];
+
+  const weekdays = ["日","月","火","水","木","金","土"];
+
+  function parseStart(s) {
+    const startTime = (s.time || "").split("-")[0].trim();
+    return new Date(`${s.date}T${startTime || "00:00"}:00`);
+  }
+
+  function fmtDate(dateStr) {
+    const d = new Date(`${dateStr}T00:00:00`);
+    return { md: `${d.getMonth() + 1}/${d.getDate()}`, wd: weekdays[d.getDay()] + "曜" };
+  }
+
+  const now = new Date();
+  const upcoming = seminars
+    .filter(s => parseStart(s) >= now)
+    .sort((a, b) => parseStart(a) - parseStart(b));
+
+  const nextSlot = document.getElementById("next-slot");
+  const listEl = document.getElementById("upcoming-list");
+
+  if (upcoming.length === 0) {
+    nextSlot.innerHTML = `<div class="empty-note">現在、開催予定のセミナーはありません。<br>公式LINEよりお問い合わせください。</div>`;
+  } else {
+    const next = upcoming[0];
+    const { md, wd } = fmtDate(next.date);
+    nextSlot.innerHTML = `
+      <div class="next-card">
+        <div class="next-date"><span class="yw">${wd}</span>${md}</div>
+        <div class="next-time">${next.time}</div>
+        <div class="next-title">${next.title}</div>
+        ${next.desc ? `<div class="next-desc">${next.desc}</div>` : ""}
+      </div>`;
+
+    const rest = upcoming.slice(1);
+    listEl.innerHTML = rest.length
+      ? rest.map(s => {
+          const f = fmtDate(s.date);
+          return `<div class="upcoming-item">
+            <div class="d">${f.md}<span>${f.wd}</span></div>
+            <div class="body">
+              <div class="t">${s.title}</div>
+              <div class="time">${s.time}</div>
+            </div>
+          </div>`;
+        }).join("")
+      : `<p style="font-size:.85rem; color:var(--teal-700); opacity:.75;">現在のところ、これ以降の予定はまだありません。</p>`;
+  }
+</script>
+
+</body>
+</html>
