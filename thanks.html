@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お申し込みありがとうございます｜櫻桃ビジネススクール サテライトキャンパス新潟校</title>
+<meta name="description" content="お申し込み完了後のご案内。ご登録メールアドレス宛の確認メールと、届かない場合の公式LINEでのお問い合わせ方法をご案内します。">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700;800&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap');
+
+  :root{
+    --teal-900:#0b4a43;
+    --teal-800:#0e6e63;
+    --teal-700:#159c8c;
+    --teal-600:#22b6a1;
+    --teal-500:#3fd0bb;
+    --teal-400:#7fe6d2;
+    --teal-300:#b8f2e2;
+    --aqua-100:#eef3e0;
+    --aqua-050:#faf4e0;
+    --gold-500:#f2a93c;
+    --gold-300:#ffe9b8;
+    --sakura-300:#f4e2b8;
+    --sakura-400:#e2b463;
+    --ink:#0d332e;
+    --alert-600:#d94f4f;
+    --alert-100:#fdeceb;
+    --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    --heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:var(--sans); color:var(--ink);
+    background:
+      radial-gradient(circle at 1px 1px, rgba(4,82,74,.07) 1px, transparent 0) 0 0/24px 24px,
+      var(--aqua-050);
+    line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 20px 60px;}
+  .icon{width:1em; height:1em; vertical-align:-.14em; margin-right:.4em; flex-shrink:0;}
+
+  header{
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg, #0a4f47 0%, #159c8c 50%, #3fd0bb 100%);
+    padding:44px 20px 84px; text-align:center; color:#fff;
+  }
+  header::before{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(circle at 50% -15%, rgba(255,255,255,.5), transparent 55%),
+      radial-gradient(circle at 82% 10%, rgba(255,255,255,.22), transparent 50%),
+      radial-gradient(circle at 12% 92%, rgba(255,233,184,.2), transparent 45%),
+      radial-gradient(ellipse 70% 55% at 50% 42%, rgba(4,42,38,.28), transparent 70%);
+  }
+  header::after{
+    content:""; position:absolute; inset:-20% -10%; z-index:0; opacity:.55; pointer-events:none;
+    background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.12) 50%, transparent 58%);
+    animation:shimmer-move 9s ease-in-out infinite;
+  }
+  @keyframes shimmer-move{
+    0%,100%{transform:translateX(-8%);}
+    50%{transform:translateX(8%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    header::after{animation:none;}
+  }
+  header h1{position:relative; z-index:2;}
+  .corner-logo{
+    position:absolute; top:16px; left:20px; z-index:2; text-align:left;
+    font-family:var(--serif); font-size:.62rem; letter-spacing:.08em; font-weight:700;
+    color:rgba(255,255,255,.55); line-height:1.5;
+  }
+  .corner-logo span{display:block; font-size:.52rem; letter-spacing:.1em; color:rgba(184,242,226,.55); font-weight:700;}
+  header h1{display:inline-grid; justify-items:stretch;}
+  header h1 .konkai{
+    display:block; font-family:var(--serif); font-weight:800; letter-spacing:.06em;
+    font-size:clamp(1.9rem, 9vw, 2.5rem); color:#fff; white-space:nowrap;
+    text-shadow:0 2px 4px rgba(2,30,26,.4), 0 2px 18px rgba(255,233,184,.4);
+  }
+  header h1 .page-sub{
+    display:block; font-family:var(--heading); font-weight:700; font-size:1.25rem;
+    color:var(--teal-300); margin-top:10px;
+  }
+  .ocean-waves{position:absolute; left:0; right:0; bottom:0; z-index:1; height:64px; overflow:hidden; pointer-events:none;}
+  .ocean-waves .wave{position:absolute; top:0; left:0; width:200%; height:100%; display:block;}
+  .ocean-waves .wave-a{fill:rgba(184,242,226,.35); animation:wave-drift 18s linear infinite;}
+  .ocean-waves .wave-b{fill:rgba(10,79,71,.4); animation:wave-drift 12s linear infinite reverse;}
+  .ocean-waves .wave-c{fill:rgba(255,255,255,.22); animation:wave-drift 8.5s linear infinite;}
+  @keyframes wave-drift{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ocean-waves .wave{animation:none;}
+  }
+
+  .section-label{
+    font-family:var(--serif); letter-spacing:.2em; font-size:.72rem;
+    color:var(--teal-600); text-transform:uppercase; font-weight:700;
+    margin:34px 0 14px; display:flex; align-items:center; gap:.6em;
+  }
+  .section-label::before{content:""; width:22px; height:3px; border-radius:2px; background:var(--gold-500);}
+
+  .lead-card{
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 16px 40px rgba(4,58,52,.18);
+    padding:28px 24px; position:relative;
+    border:3px solid var(--gold-500);
+    text-align:center;
+  }
+  .lead-card .big{
+    font-family:var(--serif); font-weight:800; font-size:1.25rem; color:var(--teal-800);
+    line-height:1.6;
+  }
+  .lead-card .sub{margin-top:10px; font-size:.9rem; color:var(--ink); opacity:.85;}
+
+  .mail-card{
+    background:#fff; border-radius:16px; box-shadow:0 12px 30px rgba(4,58,52,.12);
+    padding:20px 20px; margin-top:14px;
+  }
+  .mail-card .row{display:flex; gap:10px; font-size:.9rem; padding:8px 0;}
+  .mail-card .row + .row{border-top:1px dashed rgba(4,82,74,.15);}
+  .mail-card .k{flex:0 0 5em; font-weight:800; color:var(--teal-700);}
+  .mail-card .v{flex:1; color:var(--teal-900); font-weight:700; word-break:break-word;}
+
+  .note{
+    background:var(--aqua-100); border-radius:14px; padding:16px 18px; margin-top:14px;
+    font-size:.86rem; color:var(--teal-800);
+  }
+  .alert{
+    background:var(--alert-100); border:1px solid rgba(217,79,79,.25); border-radius:14px;
+    padding:18px 18px; margin-top:14px; font-size:.9rem; color:var(--ink);
+  }
+  .alert .alert-title{font-weight:800; color:var(--alert-600); margin-bottom:6px;}
+
+  .steps{
+    background:#fff; border-radius:16px; box-shadow:0 12px 30px rgba(4,58,52,.12);
+    padding:22px 22px; margin-top:14px;
+  }
+  .steps p{font-size:.92rem; margin-bottom:12px;}
+  .steps ol{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .steps li{
+    display:flex; align-items:center; gap:12px; background:var(--aqua-100);
+    border-radius:12px; padding:12px 14px; font-weight:800; color:var(--teal-900); font-size:.92rem;
+  }
+  .steps li .num{
+    flex:0 0 26px; height:26px; border-radius:50%; background:var(--teal-600); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:.8rem; font-family:var(--heading);
+  }
+
+  .line-btn{
+    display:block; text-align:center; margin-top:18px; padding:16px 20px; border-radius:999px;
+    background:linear-gradient(120deg, #06c755, #05a648); color:#fff; font-weight:800; font-size:1rem;
+    box-shadow:0 10px 26px rgba(6,199,85,.35); transition:transform .2s;
+  }
+  .line-btn:hover{transform:translateY(-2px) scale(1.02);}
+  .line-btn small{display:block; font-size:.72rem; font-weight:700; opacity:.9; margin-top:4px;}
+
+  .closing{margin-top:18px; font-size:.9rem; color:var(--ink); opacity:.9; text-align:center;}
+
+  footer{
+    margin-top:44px; padding-top:18px; text-align:center;
+    font-size:.76rem; color:var(--teal-700); opacity:.75;
+    border-top:1px solid rgba(4,82,74,.12);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="corner-logo">櫻桃ビジネススクール<span>SATELLITE CAMPUS NIIGATA</span></div>
+  <h1><span class="konkai">お申し込み<br class="sp">ありがとうございます</span><span class="page-sub">今後の流れのご案内</span></h1>
+  <div class="ocean-waves" aria-hidden="true">
+    <svg class="wave wave-a" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,50 C150,20 450,80 600,50 C750,20 1050,80 1200,50 C1350,20 1650,80 1800,50 C1950,20 2250,80 2400,50 L2400,130 L0,130 Z"/></svg>
+    <svg class="wave wave-b" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,72 C150,110 450,32 600,72 C750,110 1050,32 1200,72 C1350,110 1650,32 1800,72 C1950,110 2250,32 2400,72 L2400,130 L0,130 Z"/></svg>
+    <svg class="wave wave-c" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,96 C150,64 450,120 600,96 C750,64 1050,120 1200,96 C1350,64 1650,120 1800,96 C1950,64 2250,120 2400,96 L2400,130 L0,130 Z"/></svg>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <p class="section-label">まずはご確認ください</p>
+  <div class="lead-card">
+    <p class="big">ご登録頂いたメールアドレス宛に、<br>メールをお送りしました。</p>
+    <p class="sub">今後の流れについて記載しています。今すぐ、メールが届いているかをご確認ください。</p>
+  </div>
+
+  <p class="section-label">お届けするメール</p>
+  <div class="mail-card">
+    <div class="row"><div class="k">件名</div><div class="v">【重要】「魂海ーKONKAIー」お振込のご案内</div></div>
+    <div class="row"><div class="k">差出人</div><div class="v">櫻桃ビジネススクール新潟サテライト</div></div>
+  </div>
+  <div class="note">遅くとも５分以内にメールをお届けします。メールが届いていない場合には、迷惑メールとして振り分けられている可能性がありますので、迷惑メールフォルダもご確認ください。</div>
+
+  <p class="section-label">それでも届かない場合</p>
+  <div class="alert">
+    <div class="alert-title">メールアドレスが間違っている可能性があります</div>
+    迷惑メールフォルダにもメールが届いていない場合、お申し込みの際にご入力頂いたメールアドレスが間違っている可能性があります。
+  </div>
+
+  <div class="steps">
+    <p>下記の公式LINEにて、次の3点をお知らせくださいませ。</p>
+    <ol>
+      <li><span class="num">1</span>フルネーム</li>
+      <li><span class="num">2</span>メールアドレス</li>
+      <li><span class="num">3</span>申込日</li>
+    </ol>
+    <a class="line-btn" href="https://lin.ee/Yp233hm" target="_blank" rel="noopener">公式LINEでお知らせする<small>会員サイトのご案内をいたします</small></a>
+  </div>
+
+  <p class="closing">公式LINEにご登録の上、フルネームをお送りください。<br>会員サイトのご案内をいたしますので、そのままお待ちくださいませ。</p>
+
+</div>
+
+<footer>&copy; 櫻桃ビジネススクール サテライトキャンパス新潟校</footer>
+
+</body>
+</html>
