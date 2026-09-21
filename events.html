@@ -361,7 +361,7 @@
     return `
       <div class="status-tag ${open ? "open" : "closed"}">${open ? "受付中" : "受付終了"}${open && ev.applyDeadline ? `（${fmtDate(ev.applyDeadline).md}まで）` : ""}</div>
       ${open
-        ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">申し込む</a>`
+        ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">詳細を申込み</a>`
         : `<div class="apply-btn disabled">受付は終了しました</div>`}
     `;
   }
