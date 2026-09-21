@@ -203,7 +203,6 @@
     background:var(--aqua-100); border-radius:10px; padding:8px 10px; min-width:50px; flex-shrink:0;
   }
   .upcoming-item .d span{display:block; font-size:.58rem; color:var(--teal-500); font-weight:700; margin-top:2px;}
-  .upcoming-item .thumb{width:52px; height:52px; border-radius:10px; object-fit:cover; flex-shrink:0;}
   .upcoming-item .body{flex:1; min-width:0;}
   .upcoming-item .cat{font-size:.68rem; font-weight:800; color:var(--teal-600); letter-spacing:.04em;}
   .upcoming-item .t{font-weight:800; font-size:.9rem; color:var(--teal-900); margin-top:2px;}
@@ -211,8 +210,32 @@
   .upcoming-item .tag{font-size:.68rem; font-weight:800; padding:3px 10px; border-radius:999px; margin-top:7px; display:inline-block;}
   .upcoming-item .tag.open{background:var(--teal-700); color:#fff;}
   .upcoming-item .tag.closed{background:var(--aqua-100); color:var(--teal-600);}
+  .upcoming-item summary.flyer{display:block; padding:0; position:relative;}
+  .upcoming-item .flyer-img{display:block; width:100%; aspect-ratio:4/3; object-fit:cover;}
+  .upcoming-item .flyer-date{
+    position:absolute; top:10px; left:10px; font-family:var(--serif); font-weight:800;
+    font-size:.78rem; color:var(--teal-800); background:rgba(255,255,255,.92);
+    border-radius:8px; padding:4px 10px; line-height:1.3;
+  }
+  .upcoming-item .flyer-date span{display:block; font-size:.56rem; color:var(--teal-500); font-weight:700;}
+  .upcoming-item .flyer-tag{
+    position:absolute; top:10px; right:10px; font-size:.66rem; font-weight:800;
+    padding:4px 10px; border-radius:999px;
+  }
+  .upcoming-item .flyer-tag.open{background:var(--teal-700); color:#fff;}
+  .upcoming-item .flyer-tag.closed{background:rgba(255,255,255,.92); color:var(--teal-600);}
+  .upcoming-item .flyer-cta{
+    position:absolute; bottom:10px; right:10px; display:flex; align-items:center; gap:4px;
+    background:rgba(4,58,52,.78); color:#fff; font-size:.72rem; font-weight:800;
+    padding:6px 12px; border-radius:999px;
+  }
+  .upcoming-item .flyer-cta .chevron{width:13px; height:13px; margin:0; color:#fff; transition:transform .2s ease;}
+  .upcoming-item .flyer-cta .open-label{display:none;}
+  .upcoming-item[open] .flyer-cta .closed-label{display:none;}
+  .upcoming-item[open] .flyer-cta .open-label{display:inline;}
+  .upcoming-item[open] .flyer-cta .chevron{transform:rotate(180deg);}
+  .upcoming-item .flyer-title{padding:12px 16px 0; font-weight:800; font-size:.92rem; color:var(--teal-900);}
   .upcoming-item .expand{border-top:1px solid var(--aqua-100);}
-  .upcoming-item .expand-image{display:block; width:100%; max-height:180px; object-fit:cover;}
   .upcoming-item .expand-body{padding:14px 16px 16px;}
   .upcoming-item .expand-desc{font-size:.86rem; color:var(--ink); opacity:.85; margin-bottom:12px;}
   .upcoming-item .next-facts{margin-top:0;}
@@ -356,10 +379,20 @@
       ? rest.map(ev => {
           const f = fmtRange(ev);
           const evOpen = isApplyOpen(ev);
-          return `<details class="upcoming-item">
-            <summary>
+          const toggleLabel = `
+            <span class="closed-label">詳細を見る・申し込む</span>
+            <span class="open-label">閉じる</span>
+            ${ICO_CHEVRON}
+          `;
+          const summaryInner = ev.image
+            ? `
+              <img class="flyer-img" src="${ev.image}" alt="${ev.title}">
+              <div class="flyer-date"><span>${f.wd}</span>${f.md}</div>
+              <span class="flyer-tag ${evOpen ? "open" : "closed"}">${evOpen ? "受付中" : "受付終了"}</span>
+              <div class="flyer-cta">${toggleLabel}</div>
+            `
+            : `
               <div class="d">${f.md}<span>${f.wd}</span></div>
-              ${ev.image ? `<img class="thumb" src="${ev.image}" alt="${ev.title}">` : ""}
               <div class="body">
                 <div class="cat">${ev.category}</div>
                 <div class="t">${ev.title}</div>
@@ -368,15 +401,13 @@
                   ${ev.venue ? `<span>${ICO_PIN}${ev.venue}</span>` : ""}
                 </div>
                 <span class="tag ${evOpen ? "open" : "closed"}">${evOpen ? "受付中" : "受付終了"}</span>
-                <div class="detail-toggle">
-                  <span class="closed-label">詳細を見る・申し込む</span>
-                  <span class="open-label">閉じる</span>
-                  ${ICO_CHEVRON}
-                </div>
+                <div class="detail-toggle">${toggleLabel}</div>
               </div>
-            </summary>
+            `;
+          return `<details class="upcoming-item">
+            <summary class="${ev.image ? "flyer" : ""}">${summaryInner}</summary>
             <div class="expand">
-              ${ev.image ? `<img class="expand-image" src="${ev.image}" alt="${ev.title}">` : ""}
+              ${ev.image ? `<div class="flyer-title">${ev.title}</div>` : ""}
               <div class="expand-body">
                 ${ev.desc ? `<p class="expand-desc">${ev.desc}</p>` : ""}
                 <div class="next-facts">${factsHtml(ev)}</div>
