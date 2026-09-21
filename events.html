@@ -127,7 +127,7 @@
     box-shadow:0 4px 10px rgba(38,2,70,.25);
   }
   .next-image{
-    display:block; width:calc(100% + 44px); margin:-26px -22px 18px; height:auto;
+    display:block; width:calc(100% + 44px); margin:16px -22px 18px; height:auto;
   }
   .cat-badge{
     display:inline-flex; align-items:center; font-family:var(--heading); font-weight:800;
@@ -352,7 +352,7 @@
 
   function applyBtnHtml(ev) {
     return isApplyOpen(ev)
-      ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">詳細を申込み</a>`
+      ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">詳細を見る</a>`
       : `<div class="apply-btn disabled">受付は終了しました</div>`;
   }
 
@@ -415,11 +415,11 @@
 
     nextSlot.innerHTML = `
       <div class="next-card">
-        ${next.image ? `<img class="next-image" src="${next.image}" alt="${next.title}">` : ""}
         <div class="next-head">
           <span class="cat-badge ${catClass}">${next.category}</span>
           <span class="next-title-inline">${next.title}</span>
         </div>
+        ${next.image ? `<img class="next-image" src="${next.image}" alt="${next.title}">` : ""}
         <div class="next-facts">
           <div class="row"><b>開催日時</b><span>${fmtFullDateRange(next)}</span></div>
           ${venueTime ? `<div class="row"><b>会場</b><span>${venueTime}</span></div>` : ""}
