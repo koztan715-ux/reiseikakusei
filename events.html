@@ -12,20 +12,20 @@
   @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700;800&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap');
 
   :root{
-    --teal-900:#0b4a43;
-    --teal-800:#0e6e63;
-    --teal-700:#159c8c;
-    --teal-600:#22b6a1;
-    --teal-500:#3fd0bb;
-    --teal-400:#7fe6d2;
-    --teal-300:#b8f2e2;
-    --aqua-100:#eef3e0;
-    --aqua-050:#faf4e0;
+    --teal-900:#260246;
+    --teal-800:#370363;
+    --teal-700:#530497;
+    --teal-600:#7210c7;
+    --teal-500:#9335e3;
+    --teal-400:#ba92dd;
+    --teal-300:#e1d5ec;
+    --aqua-100:#f2eff5;
+    --aqua-050:#faf6f0;
     --gold-500:#f2a93c;
     --gold-300:#ffe9b8;
-    --sakura-300:#f4e2b8;
-    --sakura-400:#e2b463;
-    --ink:#0d332e;
+    --sakura-300:#f0b8d2;
+    --sakura-400:#d1699a;
+    --ink:#2a1739;
     --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
     --sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
     --heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
@@ -35,7 +35,7 @@
   body{
     font-family:var(--sans); color:var(--ink);
     background:
-      radial-gradient(circle at 1px 1px, rgba(4,82,74,.07) 1px, transparent 0) 0 0/24px 24px,
+      radial-gradient(circle at 1px 1px, rgba(58,3,102,.07) 1px, transparent 0) 0 0/24px 24px,
       var(--aqua-050);
     line-height:1.8; -webkit-font-smoothing:antialiased;
   }
@@ -111,7 +111,7 @@
   .next-card{
     background:#fff;
     border-radius:20px;
-    box-shadow:0 16px 40px rgba(4,58,52,.18);
+    box-shadow:0 16px 40px rgba(38,2,70,.18);
     padding:26px 22px; position:relative; overflow:hidden;
     border:3px solid var(--gold-500);
   }
@@ -119,7 +119,7 @@
     content:"NEXT"; position:absolute; top:14px; right:-32px;
     background:var(--gold-500); color:#fff; font-family:var(--heading); font-weight:900;
     font-size:.7rem; letter-spacing:.1em; padding:5px 40px; transform:rotate(38deg);
-    box-shadow:0 4px 10px rgba(4,58,52,.25);
+    box-shadow:0 4px 10px rgba(38,2,70,.25);
   }
   .next-image{
     display:block; width:calc(100% + 44px); margin:-26px -22px 18px; max-height:220px;
@@ -164,7 +164,7 @@
 
   .empty-note{
     background:#fff; border-radius:20px;
-    box-shadow:0 16px 40px rgba(4,58,52,.12); padding:26px 22px;
+    box-shadow:0 16px 40px rgba(38,2,70,.12); padding:26px 22px;
     font-size:.92rem; color:var(--teal-700); text-align:center;
   }
 
@@ -176,8 +176,8 @@
   }
   .upcoming-item{
     position:relative; background:#fff;
-    border-radius:14px; box-shadow:0 6px 18px rgba(4,58,52,.08);
-    border:1px solid rgba(4,82,74,.05); overflow:hidden;
+    border-radius:14px; box-shadow:0 6px 18px rgba(38,2,70,.08);
+    border:1px solid rgba(58,3,102,.05); overflow:hidden;
   }
   .upcoming-item::before{
     content:""; position:absolute; left:-25px; top:22px;
@@ -228,7 +228,7 @@
   .upcoming-item .flyer-tag.closed{background:rgba(255,255,255,.92); color:var(--teal-600);}
   .upcoming-item .flyer-cta{
     position:absolute; bottom:10px; right:10px; display:flex; align-items:center; gap:4px;
-    background:rgba(4,58,52,.78); color:#fff; font-size:.72rem; font-weight:800;
+    background:rgba(38,2,70,.78); color:#fff; font-size:.72rem; font-weight:800;
     padding:6px 12px; border-radius:999px;
   }
   .upcoming-item .flyer-cta .chevron{width:13px; height:13px; margin:0; color:#fff; transition:transform .2s ease;}
@@ -246,7 +246,7 @@
   footer{
     margin-top:44px; padding-top:18px; text-align:center;
     font-size:.76rem; color:var(--teal-700); opacity:.75;
-    border-top:1px solid rgba(4,82,74,.12);
+    border-top:1px solid rgba(58,3,102,.12);
   }
 </style>
 </head>
