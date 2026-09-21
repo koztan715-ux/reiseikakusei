@@ -127,8 +127,7 @@
     box-shadow:0 4px 10px rgba(38,2,70,.25);
   }
   .next-image{
-    display:block; width:calc(100% + 44px); margin:-26px -22px 18px; max-height:220px;
-    object-fit:cover;
+    display:block; width:calc(100% + 44px); margin:-26px -22px 18px; height:auto;
   }
   .cat-badge{
     display:inline-flex; align-items:center; font-family:var(--heading); font-weight:800;
@@ -136,17 +135,12 @@
     background:var(--aqua-100); color:var(--teal-700);
   }
   .cat-badge.retreat{background:linear-gradient(120deg, var(--gold-500), var(--sakura-400)); color:#fff;}
-  .next-date{font-family:var(--serif); font-weight:800; font-size:1.7rem; color:var(--teal-800); line-height:1.2; margin-top:14px;}
-  .next-date .yw{font-size:.95rem; font-weight:700; color:var(--teal-600); display:block; margin-bottom:2px;}
-  .next-time{
-    display:inline-flex; align-items:center; margin-top:12px; padding:6px 16px; border-radius:999px;
-    background:var(--aqua-100); color:var(--teal-700); font-weight:800; font-size:.9rem; margin-right:8px;
+  .next-head{
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-top:14px;
   }
-  .next-title{
-    font-family:var(--heading); font-weight:900; font-size:1.2rem; color:var(--teal-900);
-    margin-top:16px; position:relative;
+  .next-title-inline{
+    font-family:var(--heading); font-weight:900; font-size:1.05rem; color:var(--teal-900);
   }
-  .next-desc{margin-top:10px; font-size:.9rem; color:var(--ink); opacity:.85; position:relative;}
   .next-facts{margin-top:16px; display:flex; flex-direction:column; gap:8px;}
   .next-facts .row{display:flex; align-items:flex-start; font-size:.88rem; color:var(--ink);}
   .next-facts .row b{color:var(--teal-700); margin-right:.5em; flex-shrink:0;}
@@ -356,13 +350,17 @@
     `;
   }
 
+  function applyBtnHtml(ev) {
+    return isApplyOpen(ev)
+      ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">詳細を申込み</a>`
+      : `<div class="apply-btn disabled">受付は終了しました</div>`;
+  }
+
   function statusApplyHtml(ev) {
     const open = isApplyOpen(ev);
     return `
       <div class="status-tag ${open ? "open" : "closed"}">${open ? "受付中" : "受付終了"}${open && ev.applyDeadline ? `（${fmtDate(ev.applyDeadline).md}まで）` : ""}</div>
-      ${open
-        ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">詳細を申込み</a>`
-        : `<div class="apply-btn disabled">受付は終了しました</div>`}
+      ${applyBtnHtml(ev)}
     `;
   }
 
@@ -384,6 +382,17 @@
     return { md: `${start.md}〜${end.md}`, wd: start.wd };
   }
 
+  function fmtFullDate(dateStr) {
+    const d = new Date(`${dateStr}T00:00:00`);
+    return `${d.getMonth() + 1}月${d.getDate()}日（${weekdays[d.getDay()]}）`;
+  }
+
+  function fmtFullDateRange(ev) {
+    const start = fmtFullDate(ev.dateStart);
+    if (!ev.dateEnd || ev.dateEnd === ev.dateStart) return start;
+    return `${start}〜${fmtFullDate(ev.dateEnd)}`;
+  }
+
   function isApplyOpen(ev) {
     if (!ev.applyDeadline) return true;
     return new Date() <= endOfDay(ev.applyDeadline);
@@ -401,19 +410,21 @@
     nextSlot.innerHTML = `<div class="empty-note">現在、開催予定のオフ会・リトリートはありません。<br>公式LINEよりお問い合わせください。</div>`;
   } else {
     const next = upcoming[0];
-    const { md, wd } = fmtRange(next);
     const catClass = next.category === "リトリート" ? "retreat" : "";
+    const venueTime = [next.venue, next.time].filter(Boolean).join("　");
 
     nextSlot.innerHTML = `
       <div class="next-card">
         ${next.image ? `<img class="next-image" src="${next.image}" alt="${next.title}">` : ""}
-        <span class="cat-badge ${catClass}">${next.category}</span>
-        <div class="next-date"><span class="yw">${wd}</span>${md}</div>
-        ${next.time ? `<div class="next-time">${ICO_CLOCK}${next.time}</div>` : ""}
-        <div class="next-title">${next.title}</div>
-        ${next.desc ? `<div class="next-desc">${next.desc}</div>` : ""}
-        <div class="next-facts">${factsHtml(next)}</div>
-        ${statusApplyHtml(next)}
+        <div class="next-head">
+          <span class="cat-badge ${catClass}">${next.category}</span>
+          <span class="next-title-inline">${next.title}</span>
+        </div>
+        <div class="next-facts">
+          <div class="row"><b>開催日時</b><span>${fmtFullDateRange(next)}</span></div>
+          ${venueTime ? `<div class="row"><b>会場</b><span>${venueTime}</span></div>` : ""}
+        </div>
+        ${applyBtnHtml(next)}
       </div>`;
 
     const rest = upcoming.slice(1);
