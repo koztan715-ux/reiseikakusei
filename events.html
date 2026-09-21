@@ -424,11 +424,11 @@
           <span class="cat-badge ${catClass}">${next.category}</span>
           <span class="next-title-inline">${next.title}</span>
         </div>
-        ${next.image ? `<img class="next-image" src="${next.image}" alt="${next.title}">` : ""}
         <div class="next-facts">
           <div class="row"><b>開催日時</b><span>${fmtFullDateRange(next)}</span></div>
           ${venueTime ? `<div class="row"><b>会場</b><span>${venueTime}</span></div>` : ""}
         </div>
+        ${next.image ? `<img class="next-image" src="${next.image}" alt="${next.title}">` : ""}
         ${applyBtnHtml(next)}
       </div>`;
 
