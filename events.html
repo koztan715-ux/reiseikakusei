@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オフ会・リトリート案内｜櫻桃ビジネススクール サテライトキャンパス新潟校</title>
+<meta name="description" content="オフ会・リトリートの日程、会場、参加費、お申し込みについてご案内します。">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700;800&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap');
+
+  :root{
+    --teal-900:#260246;
+    --teal-800:#370363;
+    --teal-700:#530497;
+    --teal-600:#7210c7;
+    --teal-500:#9335e3;
+    --teal-400:#ba92dd;
+    --teal-300:#e1d5ec;
+    --aqua-100:#f2eff5;
+    --aqua-050:#faf6f0;
+    --gold-500:#f2a93c;
+    --gold-300:#ffe9b8;
+    --sakura-300:#f0b8d2;
+    --sakura-400:#d1699a;
+    --ink:#2a1739;
+    --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    --heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:var(--sans); color:var(--ink);
+    background:
+      radial-gradient(circle at 1px 1px, rgba(58,3,102,.07) 1px, transparent 0) 0 0/24px 24px,
+      var(--aqua-050);
+    line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 20px 60px;}
+  .icon{width:1em; height:1em; vertical-align:-.14em; margin-right:.4em; flex-shrink:0;}
+
+  header{
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg, #1c0333 0%, #370363 32%, #530497 62%, #ba92dd 88%, #f2eff5 100%);
+    padding:44px 20px 84px; text-align:center; color:#fff;
+  }
+  header::before{
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(circle at 50% -15%, rgba(255,255,255,.5), transparent 55%),
+      radial-gradient(circle at 82% 10%, rgba(242,169,60,.28), transparent 50%),
+      radial-gradient(circle at 12% 92%, rgba(255,233,184,.2), transparent 45%),
+      radial-gradient(ellipse 70% 55% at 50% 42%, rgba(38,2,70,.28), transparent 70%);
+  }
+  header::after{
+    content:""; position:absolute; inset:-20% -10%; z-index:0; opacity:.55; pointer-events:none;
+    background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.12) 50%, transparent 58%);
+    animation:shimmer-move 9s ease-in-out infinite;
+  }
+  @keyframes shimmer-move{
+    0%,100%{transform:translateX(-8%);}
+    50%{transform:translateX(8%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    header::after{animation:none;}
+  }
+  .header-motifs{position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;}
+  .header-motifs img{position:absolute; display:block; filter:brightness(0) invert(1);}
+  .header-motifs .m-mobile{display:none;}
+  @media (max-width:640px){
+    .header-motifs .m-desktop{display:none;}
+    .header-motifs .m-mobile{display:block;}
+  }
+  header h1{position:relative; z-index:2;}
+  .corner-logo{
+    position:absolute; top:16px; left:20px; z-index:2; text-align:left;
+    font-family:var(--serif); font-size:.62rem; letter-spacing:.08em; font-weight:700;
+    color:rgba(255,255,255,.55); line-height:1.5;
+  }
+  .corner-logo span{display:block; font-size:.52rem; letter-spacing:.1em; color:rgba(225,213,236,.55); font-weight:700;}
+  header h1{display:inline-grid; justify-items:stretch;}
+  header h1 .konkai{
+    display:block; font-family:var(--serif); font-weight:800; letter-spacing:.06em;
+    font-size:clamp(2.1rem, 10vw, 2.7rem); color:#fff; white-space:nowrap;
+    text-shadow:0 2px 4px rgba(38,2,70,.4), 0 2px 18px rgba(255,233,184,.4);
+  }
+  header h1 .page-sub{
+    display:block; font-family:var(--heading); font-weight:700; font-size:1.4rem;
+    color:#e1d5ec; margin-top:10px;
+    text-align:justify; text-align-last:justify; text-justify:inter-character;
+  }
+  .ocean-waves{position:absolute; left:0; right:0; bottom:0; z-index:1; height:64px; overflow:hidden; pointer-events:none;}
+  .ocean-waves .wave{position:absolute; top:0; left:0; width:200%; height:100%; display:block;}
+  .ocean-waves .wave-a{fill:rgba(225,213,236,.35); animation:wave-drift 18s linear infinite;}
+  .ocean-waves .wave-b{fill:rgba(38,2,70,.4); animation:wave-drift 12s linear infinite reverse;}
+  .ocean-waves .wave-c{fill:rgba(255,255,255,.22); animation:wave-drift 8.5s linear infinite;}
+  @keyframes wave-drift{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ocean-waves .wave{animation:none;}
+  }
+
+  .section-label{
+    font-family:var(--serif); letter-spacing:.2em; font-size:.72rem;
+    color:var(--teal-600); text-transform:uppercase; font-weight:700;
+    margin:34px 0 14px; display:flex; align-items:center; gap:.6em;
+  }
+  .section-label::before{content:""; width:22px; height:3px; border-radius:2px; background:var(--gold-500);}
+
+  .next-card{
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 16px 40px rgba(38,2,70,.18);
+    padding:26px 22px; position:relative; overflow:hidden;
+    border:3px solid var(--gold-500);
+  }
+  .next-card::before{
+    content:"NEXT"; position:absolute; top:14px; right:-32px;
+    background:var(--gold-500); color:#fff; font-family:var(--heading); font-weight:900;
+    font-size:.7rem; letter-spacing:.1em; padding:5px 40px; transform:rotate(38deg);
+    box-shadow:0 4px 10px rgba(38,2,70,.25);
+  }
+  .next-image{
+    display:block; width:calc(100% + 44px); margin:16px -22px 18px; height:auto;
+  }
+  .cat-badge{
+    display:inline-flex; align-items:center; font-family:var(--heading); font-weight:800;
+    font-size:.7rem; letter-spacing:.06em; padding:5px 14px; border-radius:999px;
+    background:var(--aqua-100); color:var(--teal-700);
+  }
+  .cat-badge.retreat{background:linear-gradient(120deg, var(--gold-500), var(--sakura-400)); color:#fff;}
+  .next-head{
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-top:14px;
+  }
+  .next-title-inline{
+    font-family:var(--heading); font-weight:900; font-size:1.05rem; color:var(--teal-900);
+  }
+  .next-facts{margin-top:16px; display:flex; flex-direction:column; gap:8px;}
+  .next-facts .row{display:flex; align-items:flex-start; font-size:.88rem; color:var(--ink);}
+  .next-facts .row b{color:var(--teal-700); margin-right:.5em; flex-shrink:0;}
+
+  .status-tag{
+    display:inline-flex; align-items:center; font-family:var(--heading); font-weight:800;
+    font-size:.74rem; letter-spacing:.04em; padding:5px 14px; border-radius:999px; margin-top:16px;
+  }
+  .status-tag.open{background:var(--teal-700); color:#fff;}
+  .status-tag.closed{background:var(--aqua-100); color:var(--teal-600); opacity:.85;}
+
+  .apply-btn{
+    display:block; text-align:center; margin-top:16px; padding:15px 20px; border-radius:999px;
+    background:linear-gradient(120deg, var(--gold-500), var(--sakura-400)); color:#fff;
+    font-weight:800; font-size:.98rem; box-shadow:0 10px 22px rgba(226,180,99,.4);
+  }
+  .apply-btn.disabled{
+    background:var(--aqua-100); color:var(--teal-600); box-shadow:none; opacity:.8;
+  }
+
+  .empty-note{
+    background:#fff; border-radius:20px;
+    box-shadow:0 16px 40px rgba(38,2,70,.12); padding:26px 22px;
+    font-size:.92rem; color:var(--teal-700); text-align:center;
+  }
+
+  .upcoming-list{position:relative; display:flex; flex-direction:column; gap:16px; padding-left:26px;}
+  .upcoming-list::before{
+    content:""; position:absolute; left:7px; top:8px; bottom:8px; width:2px;
+    background:linear-gradient(180deg, var(--teal-400), var(--sakura-300) 85%, transparent);
+    border-radius:2px;
+  }
+  .upcoming-item{
+    position:relative; background:#fff;
+    border-radius:14px; box-shadow:0 6px 18px rgba(38,2,70,.08);
+    border:1px solid rgba(58,3,102,.05); overflow:hidden;
+  }
+  .upcoming-item::before{
+    content:""; position:absolute; left:-25px; top:22px;
+    width:11px; height:11px; border-radius:50%; background:var(--teal-500);
+    box-shadow:0 0 0 4px var(--aqua-050);
+  }
+  .upcoming-item summary{
+    display:flex; gap:14px; align-items:flex-start; padding:13px 16px;
+    cursor:pointer; list-style:none; position:relative;
+  }
+  .upcoming-item summary::-webkit-details-marker{display:none;}
+  .upcoming-item summary::marker{content:"";}
+  .upcoming-item .detail-toggle{
+    margin-top:8px; display:flex; align-items:center; justify-content:flex-end; gap:3px;
+    font-size:.74rem; font-weight:800; color:var(--teal-600);
+  }
+  .upcoming-item .detail-toggle .chevron{width:14px; height:14px; margin:0; color:var(--teal-500); transition:transform .2s ease;}
+  .upcoming-item .detail-toggle .open-label{display:none;}
+  .upcoming-item[open] .detail-toggle .closed-label{display:none;}
+  .upcoming-item[open] .detail-toggle .open-label{display:inline;}
+  .upcoming-item[open] .detail-toggle .chevron{transform:rotate(180deg);}
+  .upcoming-item .d{
+    font-family:var(--serif); font-weight:800; color:var(--teal-800);
+    font-size:.86rem; text-align:center; line-height:1.2;
+    background:var(--aqua-100); border-radius:10px; padding:8px 10px; min-width:50px; flex-shrink:0;
+  }
+  .upcoming-item .d span{display:block; font-size:.58rem; color:var(--teal-500); font-weight:700; margin-top:2px;}
+  .upcoming-item .body{flex:1; min-width:0;}
+  .upcoming-item .cat{font-size:.68rem; font-weight:800; color:var(--teal-600); letter-spacing:.04em;}
+  .upcoming-item .t{font-weight:800; font-size:.9rem; color:var(--teal-900); margin-top:2px;}
+  .upcoming-item .meta{font-size:.76rem; color:var(--teal-600); font-weight:700; margin-top:5px; display:flex; flex-wrap:wrap; gap:10px;}
+  .upcoming-item .tag{font-size:.68rem; font-weight:800; padding:3px 10px; border-radius:999px; margin-top:7px; display:inline-block;}
+  .upcoming-item .tag.open{background:var(--teal-700); color:#fff;}
+  .upcoming-item .tag.closed{background:var(--aqua-100); color:var(--teal-600);}
+  .upcoming-item summary.flyer{display:block; padding:0; position:relative;}
+  .upcoming-item .flyer-img{display:block; width:100%; aspect-ratio:4/3; object-fit:cover;}
+  .upcoming-item .flyer-date{
+    position:absolute; top:10px; left:10px; font-family:var(--serif); font-weight:800;
+    font-size:.78rem; color:var(--teal-800); background:rgba(255,255,255,.92);
+    border-radius:8px; padding:4px 10px; line-height:1.3;
+  }
+  .upcoming-item .flyer-date span{display:block; font-size:.56rem; color:var(--teal-500); font-weight:700;}
+  .upcoming-item .flyer-tag{
+    position:absolute; top:10px; right:10px; font-size:.66rem; font-weight:800;
+    padding:4px 10px; border-radius:999px;
+  }
+  .upcoming-item .flyer-tag.open{background:var(--teal-700); color:#fff;}
+  .upcoming-item .flyer-tag.closed{background:rgba(255,255,255,.92); color:var(--teal-600);}
+  .upcoming-item .flyer-cta{
+    position:absolute; bottom:10px; right:10px; display:flex; align-items:center; gap:4px;
+    background:rgba(38,2,70,.78); color:#fff; font-size:.72rem; font-weight:800;
+    padding:6px 12px; border-radius:999px;
+  }
+  .upcoming-item .flyer-cta .chevron{width:13px; height:13px; margin:0; color:#fff; transition:transform .2s ease;}
+  .upcoming-item .flyer-cta .open-label{display:none;}
+  .upcoming-item[open] .flyer-cta .closed-label{display:none;}
+  .upcoming-item[open] .flyer-cta .open-label{display:inline;}
+  .upcoming-item[open] .flyer-cta .chevron{transform:rotate(180deg);}
+  .upcoming-item .flyer-title{padding:12px 16px 0; font-weight:800; font-size:.92rem; color:var(--teal-900);}
+  .upcoming-item .expand{border-top:1px solid var(--aqua-100);}
+  .upcoming-item .expand-body{padding:14px 16px 16px;}
+  .upcoming-item .expand-desc{font-size:.86rem; color:var(--ink); opacity:.85; margin-bottom:12px;}
+  .upcoming-item .next-facts{margin-top:0;}
+  .upcoming-item .status-tag{margin-top:12px;}
+
+  footer{
+    margin-top:44px; padding-top:18px; text-align:center;
+    font-size:.76rem; color:var(--teal-700); opacity:.75;
+    border-top:1px solid rgba(58,3,102,.12);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-motifs" aria-hidden="true">
+    <img class="m-desktop" src="motif-lotus.png" style="top:-18%; left:4%; width:220px; opacity:.13; transform:rotate(-16deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:52%; left:-8%; width:150px; opacity:.11; transform:rotate(11deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:4%; left:36%; width:56px; opacity:.20; transform:rotate(20deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:-20%; left:66%; width:240px; opacity:.14; transform:rotate(7deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:40%; left:90%; width:170px; opacity:.12; transform:rotate(-10deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:66%; left:22%; width:90px; opacity:.15; transform:rotate(-22deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:12%; left:9%; width:34px; opacity:.22; transform:rotate(-30deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:78%; left:52%; width:60px; opacity:.16; transform:rotate(15deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:20%; left:52%; width:110px; opacity:.13; transform:rotate(-6deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:-6%; left:20%; width:44px; opacity:.19; transform:rotate(24deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:60%; left:78%; width:42px; opacity:.20; transform:rotate(-18deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:30%; left:14%; width:190px; opacity:.10; transform:rotate(4deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:8%; left:82%; width:64px; opacity:.17; transform:rotate(-25deg);">
+    <img class="m-desktop" src="motif-lotus.png" style="top:82%; left:8%; width:28px; opacity:.22; transform:rotate(12deg);">
+
+    <img class="m-mobile" src="motif-lotus.png" style="top:-10px; left:6px; width:58px; opacity:.16; transform:rotate(-16deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:4px; right:10px; width:44px; opacity:.15; transform:rotate(14deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:96px; left:-14px; width:60px; opacity:.12; transform:rotate(8deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:104px; right:-16px; width:66px; opacity:.12; transform:rotate(-9deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:186px; left:24px; width:36px; opacity:.18; transform:rotate(-20deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:196px; right:30px; width:40px; opacity:.18; transform:rotate(18deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:22px; left:42%; width:44px; opacity:.16; transform:rotate(10deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:64px; left:60%; width:34px; opacity:.18; transform:rotate(-14deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:54px; left:22%; width:32px; opacity:.17; transform:rotate(22deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:126px; left:42%; width:40px; opacity:.15; transform:rotate(-8deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:146px; left:66%; width:32px; opacity:.18; transform:rotate(16deg);">
+    <img class="m-mobile" src="motif-lotus.png" style="top:166px; left:16%; width:36px; opacity:.17; transform:rotate(-18deg);">
+  </div>
+  <div class="corner-logo">櫻桃ビジネススクール<span>SATELLITE CAMPUS NIIGATA</span></div>
+  <h1><span class="konkai">オフ会・リトリート</span><span class="page-sub">ご案内とお申し込み</span></h1>
+  <div class="ocean-waves" aria-hidden="true">
+    <svg class="wave wave-a" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,50 C150,20 450,80 600,50 C750,20 1050,80 1200,50 C1350,20 1650,80 1800,50 C1950,20 2250,80 2400,50 L2400,130 L0,130 Z"/></svg>
+    <svg class="wave wave-b" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,72 C150,110 450,32 600,72 C750,110 1050,32 1200,72 C1350,110 1650,32 1800,72 C1950,110 2250,32 2400,72 L2400,130 L0,130 Z"/></svg>
+    <svg class="wave wave-c" viewBox="0 0 2400 130" preserveAspectRatio="none"><path d="M0,96 C150,64 450,120 600,96 C750,64 1050,120 1200,96 C1350,64 1650,120 1800,96 C1950,64 2250,120 2400,96 L2400,130 L0,130 Z"/></svg>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="section-label">次回のご案内</p>
+  <div id="next-slot"></div>
+
+  <p class="section-label">開催予定一覧</p>
+  <div id="upcoming-list" class="upcoming-list"></div>
+</div>
+
+<footer>&copy; 櫻桃ビジネススクール サテライトキャンパス新潟校</footer>
+
+<script>
+  /*
+   * ここにオフ会・リトリートの予定を追加してください。
+   * 開催日を過ぎたものは自動的に一覧から消えます（削除不要）。
+   *
+   * category: "オフ会" または "リトリート"
+   * title: 予定の名前（例："秋の交流オフ会"）
+   * dateStart: "YYYY-MM-DD"（開始日）
+   * dateEnd: "YYYY-MM-DD"（最終日。日帰りなら dateStart と同じ日付、または省略可）
+   * time: 開催時間の文字列（例："13:00-16:00"）。合宿系で決まっていなければ空文字でOK
+   * venue: 会場名・場所
+   * price: 参加費（例："¥8,000（税込）"）
+   * capacity: 定員（任意。無ければ "" のままでOK）
+   * applyDeadline: 申込締切 "YYYY-MM-DD"（任意。無ければ開催日まで受付扱い）
+   * applyUrl: お申し込み先リンク（LINEや申込フォームのURL）
+   * desc: 内容説明
+   * image: 案内写真のファイル名（任意。無ければこの項目ごと省略可）
+   *   画像を貼りたい場合は、まずGitHubの画面で「Add file」→「Upload files」から
+   *   写真をこのリポジトリのトップ階層にアップロードし、そのファイル名をここに指定してください（例："offkai-2026-10.jpg"）。
+   */
+  const events = [
+    // 以下はサンプルです。実際の日程に書き換えるか、この行ごと削除してください。
+    // { category: "オフ会", title: "秋の交流オフ会", dateStart: "2026-10-18", dateEnd: "2026-10-18", time: "13:00-16:00",
+    //   venue: "新潟市内 会場未定", price: "¥5,000（税込）", capacity: "定員15名",
+    //   applyDeadline: "2026-10-10", applyUrl: "https://lin.ee/St2QIVZ",
+    //   desc: "受講生同士の交流会です。詳細は追ってご案内します。",
+    //   image: "offkai-2026-10.jpg" },
+    { category: "オフ会", title: "能楽鑑賞イベント「幽玄への入口」第24回 宇髙青蘭能之会",
+      dateStart: "2026-09-27", dateEnd: "2026-09-27", time: "開場13:00・開演14:00",
+      venue: "金剛能楽堂", price: "17,600円（税込・チケット代8,000円込）", capacity: "",
+      applyDeadline: "2026-09-26", applyUrl: "noh-20260927.html",
+      desc: "能を知り、観て、その余韻まで味わう一日。事前Zoom講座（9/25(金)20:00-22:00）＋能楽公演鑑賞。公演終了後、京都校にて自由参加のお茶会あり。良い席を希望される場合は早めのお申込みをおすすめします。※スクール生・セミナー受講者等対象の内部募集です。個人霊視鑑定（約20分）は含まれません。個人鑑定をご希望の方は44,000円（税込・チケット代8,000円込）の外部募集枠でお申込みください。",
+      image: "flyer-noh-20260927.jpg" },
+    { category: "リトリート", title: "北海道リトリート",
+      dateStart: "2026-11-01", dateEnd: "2026-11-01", time: "",
+      venue: "", price: "", capacity: "",
+      applyUrl: "https://lin.ee/St2QIVZ",
+      desc: "詳細は追ってご案内します。" },
+  ];
+
+  const weekdays = ["日","月","火","水","木","金","土"];
+  const ICO_CLOCK = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>';
+  const ICO_PIN = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.1 7-12a7 7 0 0 0-14 0c0 4.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+  const ICO_TICKET = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1a1.5 1.5 0 0 0 0 3v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1a1.5 1.5 0 0 0 0-3V9Z"/></svg>';
+  const ICO_USER = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M1.5 20c1.2-3.5 4.2-5.5 7.5-5.5m6-1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z"/><path d="M14 14.7c3 .5 5.3 2.4 6.5 5.3"/></svg>';
+  const ICO_CHEVRON = '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+
+  function factsHtml(ev) {
+    return `
+      ${ev.venue ? `<div class="row">${ICO_PIN}<span>${ev.venue}</span></div>` : ""}
+      ${ev.price ? `<div class="row">${ICO_TICKET}<span>${ev.price}</span></div>` : ""}
+      ${ev.capacity ? `<div class="row">${ICO_USER}<span>${ev.capacity}</span></div>` : ""}
+    `;
+  }
+
+  function applyBtnHtml(ev) {
+    return isApplyOpen(ev)
+      ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">詳細を見る</a>`
+      : `<div class="apply-btn disabled">受付は終了しました</div>`;
+  }
+
+  function statusApplyHtml(ev) {
+    const open = isApplyOpen(ev);
+    return `
+      <div class="status-tag ${open ? "open" : "closed"}">${open ? "受付中" : "受付終了"}${open && ev.applyDeadline ? `（${fmtDate(ev.applyDeadline).md}まで）` : ""}</div>
+      ${applyBtnHtml(ev)}
+    `;
+  }
+
+  function endOfDay(dateStr) {
+    const d = new Date(`${dateStr}T00:00:00`);
+    d.setHours(23, 59, 59, 999);
+    return d;
+  }
+
+  function fmtDate(dateStr) {
+    const d = new Date(`${dateStr}T00:00:00`);
+    return { md: `${d.getMonth() + 1}/${d.getDate()}`, wd: weekdays[d.getDay()] + "曜" };
+  }
+
+  function fmtRange(ev) {
+    const start = fmtDate(ev.dateStart);
+    if (!ev.dateEnd || ev.dateEnd === ev.dateStart) return start;
+    const end = fmtDate(ev.dateEnd);
+    return { md: `${start.md}〜${end.md}`, wd: start.wd };
+  }
+
+  function fmtFullDate(dateStr) {
+    const d = new Date(`${dateStr}T00:00:00`);
+    return `${d.getMonth() + 1}月${d.getDate()}日（${weekdays[d.getDay()]}）`;
+  }
+
+  function fmtFullDateRange(ev) {
+    const start = fmtFullDate(ev.dateStart);
+    if (!ev.dateEnd || ev.dateEnd === ev.dateStart) return start;
+    return `${start}〜${fmtFullDate(ev.dateEnd)}`;
+  }
+
+  function isApplyOpen(ev) {
+    if (!ev.applyDeadline) return true;
+    return new Date() <= endOfDay(ev.applyDeadline);
+  }
+
+  const now = new Date();
+  const upcoming = events
+    .filter(ev => endOfDay(ev.dateEnd || ev.dateStart) >= now)
+    .sort((a, b) => new Date(`${a.dateStart}T00:00:00`) - new Date(`${b.dateStart}T00:00:00`));
+
+  const nextSlot = document.getElementById("next-slot");
+  const listEl = document.getElementById("upcoming-list");
+
+  if (upcoming.length === 0) {
+    nextSlot.innerHTML = `<div class="empty-note">現在、開催予定のオフ会・リトリートはありません。<br>公式LINEよりお問い合わせください。</div>`;
+  } else {
+    const next = upcoming[0];
+    const catClass = next.category === "リトリート" ? "retreat" : "";
+    const venueTime = [next.venue, next.time].filter(Boolean).join("　");
+
+    nextSlot.innerHTML = `
+      <div class="next-card">
+        <div class="next-head">
+          <span class="cat-badge ${catClass}">${next.category}</span>
+          <span class="next-title-inline">${next.title}</span>
+        </div>
+        <div class="next-facts">
+          <div class="row"><b>開催日時</b><span>${fmtFullDateRange(next)}</span></div>
+          ${venueTime ? `<div class="row"><b>会場</b><span>${venueTime}</span></div>` : ""}
+        </div>
+        ${next.image ? `<img class="next-image" src="${next.image}" alt="${next.title}">` : ""}
+        ${applyBtnHtml(next)}
+      </div>`;
+
+    const rest = upcoming.slice(1);
+    listEl.innerHTML = rest.length
+      ? rest.map(ev => {
+          const f = fmtRange(ev);
+          const evOpen = isApplyOpen(ev);
+          const toggleLabel = `
+            <span class="closed-label">詳細を見る・申し込む</span>
+            <span class="open-label">閉じる</span>
+            ${ICO_CHEVRON}
+          `;
+          const summaryInner = ev.image
+            ? `
+              <img class="flyer-img" src="${ev.image}" alt="${ev.title}">
+              <div class="flyer-date"><span>${f.wd}</span>${f.md}</div>
+              <span class="flyer-tag ${evOpen ? "open" : "closed"}">${evOpen ? "受付中" : "受付終了"}</span>
+              <div class="flyer-cta">${toggleLabel}</div>
+            `
+            : `
+              <div class="d">${f.md}<span>${f.wd}</span></div>
+              <div class="body">
+                <div class="cat">${ev.category}</div>
+                <div class="t">${ev.title}</div>
+                <div class="meta">
+                  ${ev.time ? `<span>${ICO_CLOCK}${ev.time}</span>` : ""}
+                  ${ev.venue ? `<span>${ICO_PIN}${ev.venue}</span>` : ""}
+                </div>
+                <span class="tag ${evOpen ? "open" : "closed"}">${evOpen ? "受付中" : "受付終了"}</span>
+                <div class="detail-toggle">${toggleLabel}</div>
+              </div>
+            `;
+          return `<details class="upcoming-item">
+            <summary class="${ev.image ? "flyer" : ""}">${summaryInner}</summary>
+            <div class="expand">
+              ${ev.image ? `<div class="flyer-title">${ev.title}</div>` : ""}
+              <div class="expand-body">
+                ${ev.desc ? `<p class="expand-desc">${ev.desc}</p>` : ""}
+                <div class="next-facts">${factsHtml(ev)}</div>
+                ${statusApplyHtml(ev)}
+              </div>
+            </div>
+          </details>`;
+        }).join("")
+      : `<p style="font-size:.85rem; color:var(--teal-700); opacity:.75;">現在のところ、これ以降の予定はまだありません。</p>`;
+  }
+</script>
+
+</body>
+</html>
