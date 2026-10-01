@@ -108,6 +108,12 @@
   .notice b{color:var(--teal-800);}
   .notice.warn{background:#fdece8; color:#7a2a1c;}
   .notice.warn b{color:#9c3b2f;}
+
+  .cancel-banner{
+    background:#fdece8; border:1px solid #f0b7a8; border-radius:16px; padding:18px 20px;
+    margin-top:24px; font-size:.92rem; color:#7a2a1c; line-height:1.9; text-align:center;
+  }
+  .cancel-banner b{display:block; font-size:1rem; color:#9c3b2f; margin-bottom:6px;}
   .notice.gift{background:linear-gradient(120deg, var(--gold-300), var(--sakura-300)); color:#6a3a12;}
   .notice.gift b{color:#8a4a06;}
 
@@ -115,6 +121,9 @@
     display:block; text-align:center; margin-top:20px; padding:15px 20px; border-radius:999px;
     background:linear-gradient(120deg, var(--gold-500), var(--sakura-400)); color:#fff;
     font-weight:800; font-size:.98rem; box-shadow:0 10px 22px rgba(226,180,99,.4);
+  }
+  .apply-btn.disabled{
+    background:var(--aqua-100); color:var(--teal-600); box-shadow:none;
   }
   .sub-link{
     display:block; text-align:center; margin-top:12px; font-size:.84rem; color:var(--teal-600);
@@ -141,6 +150,11 @@
 </header>
 
 <div class="wrap">
+
+  <div class="cancel-banner">
+    <b>開催中止のお知らせ</b>
+    諸事情により、今回の開催を中止することになりました。楽しみにされていた皆様には大変申し訳ございません。
+  </div>
 
   <img class="flyer-image" src="flyer-hokkaido-retreat-20261101.jpg" alt="空海に祈る言祝ぎのワーク in 札幌 ～FUCHI～">
 
@@ -194,10 +208,10 @@
 
   <p class="section-label">お申し込み</p>
   <div class="card">
-    <div class="notice">
-      下記ボタンより専用フォームでお申し込みください。参加費のお支払い方法など詳細は、お申込み後にご案内いたします。
+    <div class="notice warn">
+      <b>本イベントは開催中止となったため、お申し込みは受け付けておりません。</b>
     </div>
-    <a class="apply-btn" href="https://utage-system.com/p/SiUd1nFvmRHf" target="_blank" rel="noopener">お申し込みフォームへ</a>
+    <div class="apply-btn disabled">お申し込み受付は終了しました</div>
     <a class="sub-link" href="https://lin.ee/S8LnwHS" target="_blank" rel="noopener">ご不明点は佐藤みどり公式LINE「言祝ぎの旅人」へ</a>
   </div>
 

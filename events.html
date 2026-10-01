@@ -126,6 +126,13 @@
     font-size:.7rem; letter-spacing:.1em; padding:5px 40px; transform:rotate(38deg);
     box-shadow:0 4px 10px rgba(38,2,70,.25);
   }
+  .next-card.cancelled{border-color:#b3a9ba;}
+  .next-card.cancelled::before{content:"中止"; background:#7a7084;}
+  .cancel-notice{
+    background:#f3eef5; border:1px solid #d8cfdc; border-radius:14px; padding:16px 18px;
+    margin-top:16px; font-size:.88rem; color:#4a3f52; line-height:1.9;
+  }
+  .cancel-notice b{color:#2a1739;}
   .next-image{
     display:block; width:calc(100% + 44px); margin:16px -22px 18px; height:auto;
   }
@@ -211,6 +218,7 @@
   .upcoming-item .tag{font-size:.68rem; font-weight:800; padding:3px 10px; border-radius:999px; margin-top:7px; display:inline-block;}
   .upcoming-item .tag.open{background:var(--teal-700); color:#fff;}
   .upcoming-item .tag.closed{background:var(--aqua-100); color:var(--teal-600);}
+  .upcoming-item .tag.cancelled{background:#7a7084; color:#fff;}
   .upcoming-item summary.flyer{display:block; padding:0; position:relative;}
   .upcoming-item .flyer-img{display:block; width:100%; aspect-ratio:4/3; object-fit:cover;}
   .upcoming-item .flyer-date{
@@ -225,6 +233,7 @@
   }
   .upcoming-item .flyer-tag.open{background:var(--teal-700); color:#fff;}
   .upcoming-item .flyer-tag.closed{background:rgba(255,255,255,.92); color:var(--teal-600);}
+  .upcoming-item .flyer-tag.cancelled{background:#7a7084; color:#fff;}
   .upcoming-item .flyer-cta{
     position:absolute; bottom:10px; right:10px; display:flex; align-items:center; gap:4px;
     background:rgba(38,2,70,.78); color:#fff; font-size:.72rem; font-weight:800;
@@ -337,6 +346,7 @@
       dateStart: "2026-11-01", dateEnd: "2026-11-01", time: "11:00-15:30（雨天決行）",
       venue: "札幌・円山公園周辺", price: "6,300円（税込・事前振込み／ランチ代別途）", capacity: "",
       applyDeadline: "2026-10-29", applyUrl: "hokkaido-retreat-20261101.html",
+      cancelled: true,
       desc: "自然の中で心をととのえ、わたしに還る一日。空海を祀る大師堂参拝と「言祝ぐ詞」のワーク、五感を満たす薬膳ランチ、AIフォト講座の3つの特別な体験をご用意しています。",
       image: "flyer-hokkaido-retreat-20261101.jpg" },
   ];
@@ -357,12 +367,19 @@
   }
 
   function applyBtnHtml(ev) {
+    if (ev.cancelled) return `<div class="apply-btn disabled">開催中止となりました</div>`;
     return isApplyOpen(ev)
       ? `<a class="apply-btn" href="${ev.applyUrl}" target="_blank" rel="noopener">詳細を見る</a>`
       : `<div class="apply-btn disabled">受付は終了しました</div>`;
   }
 
   function statusApplyHtml(ev) {
+    if (ev.cancelled) {
+      return `
+        <div class="status-tag closed">開催中止</div>
+        ${applyBtnHtml(ev)}
+      `;
+    }
     const open = isApplyOpen(ev);
     return `
       <div class="status-tag ${open ? "open" : "closed"}">${open ? "受付中" : "受付終了"}${open && ev.applyDeadline ? `（${fmtDate(ev.applyDeadline).md}まで）` : ""}</div>
@@ -420,7 +437,7 @@
     const venueTime = [next.venue, next.time].filter(Boolean).join("　");
 
     nextSlot.innerHTML = `
-      <div class="next-card">
+      <div class="next-card ${next.cancelled ? "cancelled" : ""}">
         <div class="next-head">
           <span class="cat-badge ${catClass}">${next.category}</span>
           <span class="next-title-inline">${next.title}</span>
@@ -429,6 +446,7 @@
           <div class="row"><b>開催日時</b><span>${fmtFullDateRange(next)}</span></div>
           ${venueTime ? `<div class="row"><b>会場</b><span>${venueTime}</span></div>` : ""}
         </div>
+        ${next.cancelled ? `<div class="cancel-notice"><b>諸事情により、今回の開催を中止することになりました。</b>楽しみにされていた皆様には大変申し訳ございません。</div>` : ""}
         ${next.image ? `<img class="next-image" src="${next.image}" alt="${next.title}">` : ""}
         ${applyBtnHtml(next)}
       </div>`;
@@ -438,6 +456,8 @@
       ? rest.map(ev => {
           const f = fmtRange(ev);
           const evOpen = isApplyOpen(ev);
+          const tagClass = ev.cancelled ? "cancelled" : (evOpen ? "open" : "closed");
+          const tagLabel = ev.cancelled ? "開催中止" : (evOpen ? "受付中" : "受付終了");
           const toggleLabel = `
             <span class="closed-label">詳細を見る・申し込む</span>
             <span class="open-label">閉じる</span>
@@ -447,7 +467,7 @@
             ? `
               <img class="flyer-img" src="${ev.image}" alt="${ev.title}">
               <div class="flyer-date"><span>${f.wd}</span>${f.md}</div>
-              <span class="flyer-tag ${evOpen ? "open" : "closed"}">${evOpen ? "受付中" : "受付終了"}</span>
+              <span class="flyer-tag ${tagClass}">${tagLabel}</span>
               <div class="flyer-cta">${toggleLabel}</div>
             `
             : `
@@ -459,7 +479,7 @@
                   ${ev.time ? `<span>${ICO_CLOCK}${ev.time}</span>` : ""}
                   ${ev.venue ? `<span>${ICO_PIN}${ev.venue}</span>` : ""}
                 </div>
-                <span class="tag ${evOpen ? "open" : "closed"}">${evOpen ? "受付中" : "受付終了"}</span>
+                <span class="tag ${tagClass}">${tagLabel}</span>
                 <div class="detail-toggle">${toggleLabel}</div>
               </div>
             `;
@@ -468,6 +488,7 @@
             <div class="expand">
               ${ev.image ? `<div class="flyer-title">${ev.title}</div>` : ""}
               <div class="expand-body">
+                ${ev.cancelled ? `<div class="cancel-notice"><b>諸事情により、今回の開催を中止することになりました。</b>楽しみにされていた皆様には大変申し訳ございません。</div>` : ""}
                 ${ev.desc ? `<p class="expand-desc">${ev.desc}</p>` : ""}
                 <div class="next-facts">${factsHtml(ev)}</div>
                 ${statusApplyHtml(ev)}
