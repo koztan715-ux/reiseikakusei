@@ -195,7 +195,7 @@
 <script>
   /*
    * ここにセミナー予定を追加してください。
-   * 過去の日時は自動的に一覧から消えます（削除不要）。
+   * 終了時刻の10分後に自動的に一覧から消えます（削除不要）。
    * date: "YYYY-MM-DD", time: "開始-終了" の文字列, title: セミナー名, desc: 内容説明
    */
   const seminars = [
@@ -247,6 +247,13 @@
     return new Date(`${s.date}T${startTime || "00:00"}:00`);
   }
 
+  function parseHideAt(s) {
+    const endTime = (s.time || "").split("-")[1];
+    const d = endTime ? new Date(`${s.date}T${endTime.trim()}:00`) : parseStart(s);
+    d.setMinutes(d.getMinutes() + 10);
+    return d;
+  }
+
   function fmtDate(dateStr) {
     const d = new Date(`${dateStr}T00:00:00`);
     return { md: `${d.getMonth() + 1}/${d.getDate()}`, wd: weekdays[d.getDay()] + "曜" };
@@ -254,7 +261,7 @@
 
   const now = new Date();
   const upcoming = seminars
-    .filter(s => parseStart(s) >= now)
+    .filter(s => parseHideAt(s) >= now)
     .sort((a, b) => parseStart(a) - parseStart(b));
 
   const nextSlot = document.getElementById("next-slot");
