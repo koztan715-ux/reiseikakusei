@@ -188,14 +188,19 @@
     font-size:.66rem; font-weight:700; color:var(--teal-600); text-align:center; padding-bottom:4px;
   }
   .cal-cell{
-    aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
-    font-size:.78rem; font-weight:700; color:var(--ink); border-radius:50%;
-    font-variant-numeric:tabular-nums;
+    aspect-ratio:1/1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:3px; font-size:.78rem; font-weight:700; color:var(--ink); border-radius:10px;
+    font-variant-numeric:tabular-nums; position:relative;
   }
+  .cal-cell .mark-dot{width:4px; height:4px; border-radius:50%; background:var(--gold-500); opacity:0;}
   .cal-cell.empty{visibility:hidden;}
-  .cal-cell.marked{background:var(--gold-500); color:#fff; box-shadow:0 3px 8px rgba(90,61,15,.3);}
-  .cal-cell.today{box-shadow:inset 0 0 0 2px var(--teal-700);}
-  .cal-cell.today.marked{box-shadow:inset 0 0 0 2px #fff, 0 3px 8px rgba(90,61,15,.3);}
+  .cal-cell.marked{
+    background:linear-gradient(160deg, rgba(224,168,58,.16), rgba(224,168,58,.05));
+    color:var(--teal-900); font-weight:800;
+  }
+  .cal-cell.marked .mark-dot{opacity:1; box-shadow:0 0 4px rgba(224,168,58,.5);}
+  .cal-cell.today{box-shadow:inset 0 0 0 1.5px var(--teal-700);}
+  .cal-cell.today.marked{box-shadow:inset 0 0 0 1.5px var(--gold-500);}
 </style>
 </head>
 <body>
@@ -314,7 +319,7 @@
       const cls = ["cal-cell"];
       if (markedSet.has(dateStr)) cls.push("marked");
       if (dateStr === todayStr) cls.push("today");
-      cells += `<div class="${cls.join(" ")}">${d}</div>`;
+      cells += `<div class="${cls.join(" ")}">${d}<span class="mark-dot"></span></div>`;
     }
     return `<div class="cal-month"><div class="cal-month-label">${year}年${month}月</div><div class="cal-grid">${cells}</div></div>`;
   }
