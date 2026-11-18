@@ -192,7 +192,6 @@
     gap:2px; font-size:.78rem; font-weight:700; color:var(--ink); border-radius:10px;
     font-variant-numeric:tabular-nums; position:relative;
   }
-  .cal-cell .mark-tag{font-size:.48rem; font-weight:800; letter-spacing:.02em; line-height:1;}
   .cal-cell.empty{visibility:hidden;}
   .cal-cell.marked{
     background:linear-gradient(160deg, rgba(224,168,58,.45), rgba(224,168,58,.22));
@@ -202,7 +201,6 @@
     background:linear-gradient(160deg, rgba(224,168,58,.6), rgba(224,168,58,.32));
     outline:none;
   }
-  .cal-cell.marked .mark-tag{color:var(--teal-800);}
   .cal-cell.marked.past{
     background:linear-gradient(160deg, rgba(224,168,58,.16), rgba(224,168,58,.06));
     color:var(--teal-600); font-weight:700;
@@ -210,7 +208,6 @@
   .cal-cell.marked.past:hover, .cal-cell.marked.past:focus-visible{
     background:linear-gradient(160deg, rgba(224,168,58,.26), rgba(224,168,58,.1));
   }
-  .cal-cell.marked.past .mark-tag{color:var(--teal-500);}
   .cal-cell.today{box-shadow:inset 0 0 0 1.5px var(--teal-700);}
   .cal-cell.today.marked{box-shadow:inset 0 0 0 1.5px var(--gold-500);}
 
@@ -341,9 +338,8 @@
       const cls = ["cal-cell"];
       if (info) cls.push("marked", info);
       if (dateStr === todayStr) cls.push("today");
-      const tag = info ? `<span class="mark-tag">セミナー</span>` : "";
       const attrs = info ? ` role="button" tabindex="0" onclick="showCalDay('${ym}','${dateStr}')" onkeydown="if(event.key==='Enter')showCalDay('${ym}','${dateStr}')"` : "";
-      cells += `<div class="${cls.join(" ")}"${attrs}>${d}${tag}</div>`;
+      cells += `<div class="${cls.join(" ")}"${attrs}>${d}</div>`;
     }
     return `<div class="cal-month"><div class="cal-month-label">${year}年${month}月</div><div class="cal-grid">${cells}</div><div class="cal-detail" id="cal-detail-${ym}">日付をタップすると内容が表示されます</div></div>`;
   }
