@@ -189,18 +189,39 @@
   }
   .cal-cell{
     aspect-ratio:1/1; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:3px; font-size:.78rem; font-weight:700; color:var(--ink); border-radius:10px;
+    gap:2px; font-size:.78rem; font-weight:700; color:var(--ink); border-radius:10px;
     font-variant-numeric:tabular-nums; position:relative;
   }
-  .cal-cell .mark-dot{width:4px; height:4px; border-radius:50%; background:var(--gold-500); opacity:0;}
+  .cal-cell .mark-tag{font-size:.48rem; font-weight:800; letter-spacing:.02em; line-height:1;}
   .cal-cell.empty{visibility:hidden;}
   .cal-cell.marked{
-    background:linear-gradient(160deg, rgba(224,168,58,.16), rgba(224,168,58,.05));
-    color:var(--teal-900); font-weight:800;
+    background:linear-gradient(160deg, rgba(224,168,58,.45), rgba(224,168,58,.22));
+    color:var(--teal-900); font-weight:800; cursor:pointer;
   }
-  .cal-cell.marked .mark-dot{opacity:1; box-shadow:0 0 4px rgba(224,168,58,.5);}
+  .cal-cell.marked:hover, .cal-cell.marked:focus-visible{
+    background:linear-gradient(160deg, rgba(224,168,58,.6), rgba(224,168,58,.32));
+    outline:none;
+  }
+  .cal-cell.marked .mark-tag{color:var(--teal-800);}
+  .cal-cell.marked.past{
+    background:linear-gradient(160deg, rgba(224,168,58,.16), rgba(224,168,58,.06));
+    color:var(--teal-600); font-weight:700;
+  }
+  .cal-cell.marked.past:hover, .cal-cell.marked.past:focus-visible{
+    background:linear-gradient(160deg, rgba(224,168,58,.26), rgba(224,168,58,.1));
+  }
+  .cal-cell.marked.past .mark-tag{color:var(--teal-500);}
   .cal-cell.today{box-shadow:inset 0 0 0 1.5px var(--teal-700);}
   .cal-cell.today.marked{box-shadow:inset 0 0 0 1.5px var(--gold-500);}
+
+  .cal-detail{
+    margin-top:14px; padding:14px 16px; border-radius:14px;
+    background:var(--aqua-100); font-size:.82rem; color:var(--teal-700);
+    text-align:center;
+  }
+  .cal-detail-date{font-family:var(--serif); font-weight:800; color:var(--teal-800); font-size:.9rem; margin-bottom:4px;}
+  .cal-detail-title{font-weight:800; color:var(--teal-900); font-size:.92rem; line-height:1.5;}
+  .cal-detail-time{display:flex; align-items:center; justify-content:center; margin-top:6px; font-weight:700; color:var(--teal-600); font-size:.8rem;}
 </style>
 </head>
 <body>
@@ -308,7 +329,7 @@
     return { md: `${d.getMonth() + 1}/${d.getDate()}`, wd: weekdays[d.getDay()] + "曜" };
   }
 
-  function renderMonth(year, month, markedSet, todayStr) {
+  function renderMonth(year, month, dayInfo, todayStr, ym) {
     const first = new Date(year, month - 1, 1);
     const startWeekday = first.getDay();
     const daysInMonth = new Date(year, month, 0).getDate();
@@ -316,12 +337,15 @@
     for (let i = 0; i < startWeekday; i++) cells += `<div class="cal-cell empty"></div>`;
     for (let d = 1; d <= daysInMonth; d++) {
       const dateStr = `${year}-${String(month).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+      const info = dayInfo.get(dateStr);
       const cls = ["cal-cell"];
-      if (markedSet.has(dateStr)) cls.push("marked");
+      if (info) cls.push("marked", info);
       if (dateStr === todayStr) cls.push("today");
-      cells += `<div class="${cls.join(" ")}">${d}<span class="mark-dot"></span></div>`;
+      const tag = info ? `<span class="mark-tag">セミナー</span>` : "";
+      const attrs = info ? ` role="button" tabindex="0" onclick="showCalDay('${ym}','${dateStr}')" onkeydown="if(event.key==='Enter')showCalDay('${ym}','${dateStr}')"` : "";
+      cells += `<div class="${cls.join(" ")}"${attrs}>${d}${tag}</div>`;
     }
-    return `<div class="cal-month"><div class="cal-month-label">${year}年${month}月</div><div class="cal-grid">${cells}</div></div>`;
+    return `<div class="cal-month"><div class="cal-month-label">${year}年${month}月</div><div class="cal-grid">${cells}</div><div class="cal-detail" id="cal-detail-${ym}">日付をタップすると内容が表示されます</div></div>`;
   }
 
   function renderCalendars(list) {
@@ -334,8 +358,11 @@
     const todayStr = `${now2.getFullYear()}-${String(now2.getMonth() + 1).padStart(2, "0")}-${String(now2.getDate()).padStart(2, "0")}`;
     return order.map(ym => {
       const [y, m] = ym.split("-").map(Number);
-      const marked = new Set(list.filter(s => s.date.slice(0, 7) === ym).map(s => s.date));
-      return renderMonth(y, m, marked, todayStr);
+      const dayInfo = new Map();
+      seminars.filter(s => s.date.slice(0, 7) === ym).forEach(s => {
+        dayInfo.set(s.date, parseHideAt(s) < now2 ? "past" : "future");
+      });
+      return renderMonth(y, m, dayInfo, todayStr, ym);
     }).join("");
   }
 
@@ -343,6 +370,15 @@
   const upcoming = seminars
     .filter(s => parseHideAt(s) >= now)
     .sort((a, b) => parseStart(a) - parseStart(b));
+
+  const sessionsByDate = new Map(seminars.map(s => [s.date, s]));
+  window.showCalDay = function (ym, dateStr) {
+    const s = sessionsByDate.get(dateStr);
+    const el = document.getElementById("cal-detail-" + ym);
+    if (!el || !s) return;
+    const f = fmtDate(s.date);
+    el.innerHTML = `<div class="cal-detail-date">${f.md}（${f.wd}）</div><div class="cal-detail-title">${s.title}</div><div class="cal-detail-time">${ICO_CLOCK}${s.time}</div>`;
+  };
 
   const nextSlot = document.getElementById("next-slot");
   const listEl = document.getElementById("upcoming-list");
